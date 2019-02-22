@@ -9,6 +9,19 @@
   <body>
     <div id="root"></div>
 
+    <!--
+  <div class = "curtain">
+    <div class = "curtain__wrapper">
+      <input type = "checkbox" checked>
+      <div class = "curtain__panel curtain__panel--left">
+      </div>
+      <div class = "curtain__prize"></div>
+      <div class = "curtain__panel curtain__panel--right">
+      </div>
+    </div>
+  </div>
+  -->
+<!-- ------------------------------------------------------------- -->
     <header>
       <nav>
         <ul>
@@ -44,6 +57,11 @@
     </div>
 
     <div class="pokemonInfo">
+      <label for="pokemonPreEvolutionSpan">Pre-evoluciones: </label>
+      <span class="pokemonPreEvolutions" id="pokePreEvolution" name="pokemonPreEvolutionSpan"></span>
+    </div>
+
+    <div class="pokemonInfo">
       <label for="pokemonEvolutionSpan">Evoluciones: </label>
       <span class="pokemonEvolutions" id="pokeEvolution" name="pokemonEvolutionSpan"></span>
     </div>
@@ -51,6 +69,16 @@
     <div class="pokemonInfo">
       <label for="pokeDescriptionSpan">Descripción: </label>
       <span class="pokemonDescription" id="pokeDescription" name="pokemonDescriptionSpan"></span>
+    </div>
+
+    <div class="pokemonInfo">
+      <label for="pokeHeightSpan">Altura: </label>
+      <span class="pokemonHeight" id="pokeHeight" name="pokemonHeight"></span>
+    </div>
+
+    <div class="pokemonInfo">
+      <label for="pokeWeightSpan">Peso: </label>
+      <span class="pokemonWeight" id="pokeWeight" name="pokemonWeightSpan"></span>
     </div>
 
     <div class="pokemonInfo">
@@ -73,12 +101,25 @@
       <span class="pokemonInfo" id="candies" name="candiesSpan"></span>
     </div>
 
+    <!-- <div id="pokemonItems"></div> -->
+
 
     <footer> Creado por Mel y Share :)</footer>
-
 
     <script src="./data/pokemon/pokemon.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
+
+<!-- <div class="pokemonItem">
+  <figure>
+    <img src="{pokemon.img}">
+  </figure>
+  <div class="pokemonNum Item">
+    <span># {pokemon.num}</span>
+  </div>
+  <div class="pokemonName Item">
+    <span>{pokemon.name}</span>
+  </div>
+</div> -->
