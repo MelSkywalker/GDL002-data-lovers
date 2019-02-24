@@ -8,20 +8,7 @@
   </head>
   <body>
     <div id="root"></div>
-
-    <!--
-  <div class = "curtain">
-    <div class = "curtain__wrapper">
-      <input type = "checkbox" checked>
-      <div class = "curtain__panel curtain__panel--left">
-      </div>
-      <div class = "curtain__prize"></div>
-      <div class = "curtain__panel curtain__panel--right">
-      </div>
-    </div>
-  </div>
-  -->
-<!-- ------------------------------------------------------------- -->
+  
     <header>
       <nav>
         <ul>
@@ -40,6 +27,7 @@
       </nav>
     </header>
 
+  <div id="pokemonCard">
     <div class="pokemonInfo">
       <figure>
         <img src="" class="pokemonImg" id="pokemonPicture">
@@ -88,21 +76,33 @@
 
     <div class="pokemonInfo">
       <p>Información de juego: </p>
-      <label for="frequencySpawnSpan">Frecuencia de aparición: </label>
-      <span class="pokemonInfo" id="frequencySpawn" name="frequencySpawnSpan"></span>
+      <div class="pokemonInfo pokemonGameInfo">
+        <label for="frequencySpawnSpan">Frecuencia de aparición: </label>
+        <span class="pokemonInfo" id="frequencySpawn" name="frequencySpawnSpan"></span>
+      </div>
 
-      <label for="timeSpawnSpan">Tiempo de aparición: </label>
-      <span class="pokemonInfo" id="timeSpawn" name="timeSpawnSpan"></span>
+      <div class="pokemonInfo pokemonGameInfo">
+        <label for="timeSpawnSpan">Tiempo de aparición: </label>
+        <span class="pokemonInfo" id="timeSpawn" name="timeSpawnSpan"></span>
+      </div>
+      <div class="pokemonInfo pokemonGameInfo">
+        <label for="kmEggSpan">Distancia para eclosión de huevo: </label>
+        <span class="pokemonInfo" id="kmEgg" name="kmEggSpan"></span>
+      </div>
 
-      <label for="kmEggSpan">Distancia para eclosión de huevo: </label>
-      <span class="pokemonInfo" id="kmEgg" name="kmEggSpan"></span>
-
-      <label for="candiesNumberSpan">Número de dulces para evolucionar: </label>
-      <span class="pokemonInfo" id="candies" name="candiesSpan"></span>
+      <div class="pokemonInfo pokemonGameInfo">
+        <label for="candiesNumberSpan">Número de dulces para evolucionar: </label>
+        <span class="pokemonInfo" id="candies" name="candiesSpan"></span>
+      </div>
     </div>
 
-    <!-- <div id="pokemonItems"></div> -->
 
+
+  </div>
+    <!-- ------------------------------------------------------------------------------------------- -->
+    <input type="button" value="DisplayTest" class="showFilter" id="showButton">
+
+    <div id="pokemonList"></div>
 
     <footer> Creado por Mel y Share :)</footer>
 
@@ -111,15 +111,3 @@
     <script src="main.js"></script>
   </body>
 </html>
-
-<!-- <div class="pokemonItem">
-  <figure>
-    <img src="{pokemon.img}">
-  </figure>
-  <div class="pokemonNum Item">
-    <span># {pokemon.num}</span>
-  </div>
-  <div class="pokemonName Item">
-    <span>{pokemon.name}</span>
-  </div>
-</div> -->
