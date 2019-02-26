@@ -1,7 +1,7 @@
 // let selectedPokemon;
 // let type;
 // let typeValue;
-
+let globalPokemon;
 //Seleccionar un pokemon al azar
 const pickPokemon = () => { 
     const randomNumber = Math.floor(Math.random()*151);
@@ -12,6 +12,7 @@ const pickPokemon = () => {
 //Recibir el nombre del pokemon a buscar
 const getPokemon = () => { 
     let selectedPokemon = document.getElementById("searchBar").value;
+    document.getElementById("divCPcalc").innerHTML = "";
     return selectedPokemon;
 }
 
@@ -38,6 +39,8 @@ const showPokemonList = (listToDisplay) => {
         const pokemonDiv = document.createElement("div");
         const pokemonLabel = document.createElement("label");
         const pokemonImg = document.createElement("img");
+        const pokemonLink = document.createElement("a");
+        pokemonDiv.className = "pokemonElement";
 
         pokemonLabel.appendChild(document.createTextNode(listToDisplay[i].num+" "));
         pokemonLabel.appendChild(document.createTextNode(listToDisplay[i].name));
@@ -47,26 +50,127 @@ const showPokemonList = (listToDisplay) => {
         pokemonImg.src = listToDisplay[i].img;
         pokemonDiv.appendChild(pokemonImg);
         pokemonList.appendChild(pokemonDiv);
+
+        pokemonLink.href = document.getElementById("pokemonCard");
+        pokemonDiv.appendChild(pokemonLink);
+        pokemonList.appendChild(pokemonDiv);
+        
+        pokemonDiv.addEventListener("click",function(){
+            console.log("hola");
+            displayScreen("details");
+            displayInfo(listToDisplay[i]);
+        });
+    }
+}
+
+const calculateMaxCP = (pokemonObj) => {
+    document.getElementById("divCPcalc").innerHTML = "";
+    const cpPokemon = document.getElementById("divCPcalc");
+    const cp = document.getElementById("idInputCP").value;
+    if(pokemonObj.multipliers.length == 1){
+        const cpLabel = document.createElement("label");
+        const cpValue = Math.ceil(pokemonObj.multipliers[0]*cp);
+        cpLabel.appendChild(document.createTextNode(cpValue));
+        cpPokemon.appendChild(cpLabel);
+    } else {
+        for(let i = 0 ; i < pokemonObj.multipliers.length ; i++){
+            if(i == pokemonObj.multipliers.length-1){
+                const cpLabel = document.createElement("label");
+                const cpValue = Math.ceil(pokemonObj.multipliers[i]*cp);
+                cpLabel.appendChild(document.createTextNode(" Hasta: " +cpValue));
+                cpPokemon.appendChild(cpLabel);
+            } else{
+                const cpLabel = document.createElement("label");
+                const cpValue = Math.ceil(pokemonObj.multipliers[i]*cp);
+                
+                cpLabel.appendChild(document.createTextNode(cpValue));
+                cpPokemon.appendChild(cpLabel);
+            }
+        }
+    }
+    document.getElementById("idInputCP").value = "";
+}
+
+const displayScreen = (screenName) => {
+    if (screenName === "details") {
+        const displayList = document.getElementById("pokemonList");
+        const displayPokemonCard = document.getElementById("pokemonCard");
+        const displayPokemonCP = document.getElementById("divMaxCP");
+        displayList.style.display = "none";
+        displayPokemonCard.style.display = "block";
+        displayPokemonCP.style.display = "block";
+        // displayInfo(findPokemon(window.POKEMON.pokemon));
+        // llamar a displayInfo
+        return;
+    }
+    if(screenName === "search") {
+        const displayList = document.getElementById("pokemonList");
+        const displayPokemonCard = document.getElementById("pokemonCard");
+        const displayPokemonCP = document.getElementById("divMaxCP");
+        displayList.style.display = "none";
+        displayPokemonCard.style.display = "block";
+        displayPokemonCP.style.display = "block";
+        displayInfo(findPokemon(window.POKEMON.pokemon));
+        // llamar a displayInfo
+        return;
+    }
+    if (screenName === "list") {
+        const displayList = document.getElementById("pokemonList");
+        const displayPokemonCard = document.getElementById("pokemonCard");
+        const displayPokemonCP = document.getElementById("divMaxCP");
+        displayList.style.display = "block";
+        displayPokemonCard.style.display = "none";
+        displayPokemonCP.style.display = "none";
+        displayPokemonList("filter");
+        // llamar a displayPokemonList
+        return;
+    }
+    if (screenName === "home"){
+        const displayList = document.getElementById("pokemonList");
+        const displayPokemonCard = document.getElementById("pokemonCard");
+        const displayPokemonCP = document.getElementById("divMaxCP");
+        displayList.style.display = "none";
+        displayPokemonCard.style.display = "block";
+        displayPokemonCP.style.display = "block";
+        pickPokemon();
+        return;
+    }
+}
+
+// console.log(displayScreen("list"));
+
+// displayScreen("home");
+// TEST //
+//Mostrar listas de Pokémon (filtrados u ordenados)
+const displayPokemonList = (whichList) => {
+    if(whichList === "filter"){
+        showPokemonList(filterPokemon(window.POKEMON.pokemon,"type","Grass"));
+        return;
+    }
+    if(whichList === "order"){
+        showPokemonList(orderPokemon(window.POKEMON.pokemon,"name","asc"));
+        return;
     }
 }
 
 //Mostrar datos del pokemon SELECCIONADO
-const displayInfo = () => { 
-    const dataPokemon = findPokemon(window.POKEMON.pokemon)
-    document.getElementById("pokeName").innerHTML = dataPokemon.name;
-    document.getElementById("pokeNum").innerHTML = dataPokemon.num;
-    document.getElementById("pokemonPicture").src = dataPokemon.img;
-    document.getElementById("pokeType").innerHTML = dataPokemon.type;
-    document.getElementById("pokePreEvolution").innerHTML = findEvolution(dataPokemon,"prev_evolution");
-    document.getElementById("pokeEvolution").innerHTML = findEvolution(dataPokemon,"next_evolution");
-    document.getElementById("pokeDescription").innerHTML = dataPokemon.description;
-    document.getElementById("pokeHeight").innerHTML = dataPokemon.height;
-    document.getElementById("pokeWeight").innerHTML = dataPokemon.weight;
-    document.getElementById("pokeWeaknesses").innerHTML = dataPokemon.weaknesses;
-    document.getElementById("frequencySpawn").innerHTML = dataPokemon.avg_spawns;
-    document.getElementById("timeSpawn").innerHTML = dataPokemon.spawn_time;
-    document.getElementById("kmEgg").innerHTML = dataPokemon.egg;
-    document.getElementById("candies").innerHTML = dataPokemon.candy_count;
+const displayInfo = (pokemonObj) => {
+    // const dataPokemon = findPokemon(window.POKEMON.pokemon);
+    globalPokemon = pokemonObj;
+    document.getElementById("pokeName").innerHTML = pokemonObj.name;
+    document.getElementById("pokeNum").innerHTML = pokemonObj.num;
+    document.getElementById("pokemonPicture").src = pokemonObj.img;
+    document.getElementById("pokeType").innerHTML = pokemonObj.type;
+    document.getElementById("pokePreEvolution").innerHTML = findEvolution(pokemonObj,"prev_evolution");
+    document.getElementById("pokeEvolution").innerHTML = findEvolution(pokemonObj,"next_evolution");
+    document.getElementById("pokeDescription").innerHTML = pokemonObj.description;
+    document.getElementById("pokeHeight").innerHTML = pokemonObj.height;
+    document.getElementById("pokeWeight").innerHTML = pokemonObj.weight;
+    document.getElementById("pokeWeaknesses").innerHTML = pokemonObj.weaknesses;
+    document.getElementById("frequencySpawn").innerHTML = pokemonObj.avg_spawns;
+    document.getElementById("timeSpawn").innerHTML = pokemonObj.spawn_time;
+    document.getElementById("kmEgg").innerHTML = pokemonObj.egg;
+    document.getElementById("candies").innerHTML = pokemonObj.candy_count;
     document.getElementById("searchBar").value = "";
 }
 
@@ -95,263 +199,80 @@ const filterPokemon = (data, whatTofilter, valueToCompare) => {
 }
 //console.log(filterPokemon(window.POKEMON.pokemon,"type","Fairy"));
 
-//ORDENAR por NUM   
-const orderByNumAsc = (data) => {
-    let pokemonArray = data.sort((a,b) => a.id - b.id);
-    return pokemonArray;
-}
-
-const orderByNumDesc = (data) => {
-    let pokemonArray  = data.sort((a,b) => b.id - a.id);
-    return pokemonArray;
-}
 //ORDENAR por NAME
-const orderByNameAsc = (data) => {
-    let pokemonArray = data.sort(function(a,b){
-        if(a.name < b.name){
-            return -1;
-        } if(a-name > b.name){
-            return 1;
-        } return 0;
-    });
-    return pokemonArray;
+const orderPokemon = (data,value,order) => {
+    if(value == "num"){
+        if(order == "asc"){
+            let pokemonArray = data.sort((a,b) => a.id - b.id);
+            return pokemonArray;
+        }
+        if(order == "desc"){
+            let pokemonArray  = data.sort((a,b) => b.id - a.id);
+            return pokemonArray;
+        }
+    }
+    if(value == "name"){
+        if(order == "asc"){
+            let pokemonArray = data.sort(function(a,b){
+                if(a.name < b.name){
+                    return -1;
+                } if(a-name > b.name){
+                    return 1;
+                } return 0;
+            });
+            return pokemonArray;
+        }
+        if(order == "desc"){
+            let pokemonArray = data.sort(function(a,b){
+                if(a.name > b.name){
+                    return -1;
+                } if(a-name < b.name){
+                    return 1;
+                } return 0;
+            });
+            return pokemonArray;
+        }
+    }
 }
-const orderByNameDesc = (data) => {
-    let pokemonArray = data.sort(function(a,b){
-        if(a.name > b.name){
-            return -1;
-        } if(a-name < b.name){
-            return 1;
-        } return 0;
-    });
-    return pokemonArray;
-}
-//orderByNumDesc(window.POKEMON.pokemon);
-// console.log(orderByNameDesc(window.POKEMON.pokemon));
 
-// TEST //
-//Mostrar listas de Pokémon (filtrados u ordenados)
-const displayPokemonList = () => {
-    showPokemonList(filterPokemon(window.POKEMON.pokemon,"type","Grass"));
-}
+// console.log(orderPokemon(window.POKEMON.pokemon,"num","asc"));
+
 
 // EVENT LISTENERS
-document.getElementById("searchButton").addEventListener("click",displayInfo); //Llamar al botón BUSCAR
-document.getElementById("showButton").addEventListener("click",displayPokemonList); //Mostrar listas
+// displayScreen("home");
+document.getElementById("searchButton").addEventListener("click",() => displayScreen("search")); //Llamar al botón BUSCAR
+document.getElementById("showButton").addEventListener("click",() => displayScreen("list")); //Mostrar listas
+document.getElementById("calculateButton").addEventListener("click",() => calculateMaxCP(globalPokemon));
 
-//TEST
-//Ordenar por número (ya están ordenados por número...)
-// const orderByNumber = (pokemonList) => {
-//     return pokemonList;
-// }
-//console.log(orderByNumber(window.POKEMON.pokemon));
-
-//TEST
-//Ordenar por nombre
-// const orderByName = (pokemonList) => {
-//     const pokemonArray = [];
-//     for(let i = 0 ; i < pokemonList.length ; i++){
-//         pokemonArray.push(pokemonList[i].name);
-//     }
-//     return pokemonArray.sort();
-// }
-//console.log(orderByName(window.POKEMON.pokemon));
-
-// let pokemonItemTemp = `<div class="pokemonItem">
-// <figure>
-//   <img src="{pokemon.img}">
-// </figure>
-// <div class="pokemonNum Item">
-//   <span># {pokemon.num}</span>
-// </div>
-// <div class="pokemonName Item">
-//   <span>{pokemon.name}</span>
-// </div>
-// </div>`
-// const replaceItemValues = (pokemon) => {
-//     return pokemonItemTemp
-//     .replace("{pokemon.img}",pokemon.img)
-//     .replace("{pokemon.num}",pokemon.num)
-//     .replace("{pokemon.name}",pokemon.name)
-// }
-// let pokemonItems = document.getElementById("pokemonItems");
-// const displayPokemonItem = (pokemon) => {
-//     let pokemonHtml = pokemon.map(pokemon => replaceItemValues(pokemon)).join(" ");
-//     pokemonItems.innerHTML = pokemonHtml;
+//ORDENAR por NUM   
+// const orderByNumAsc = (data) => {
+//     let pokemonArray = data.sort((a,b) => a.id - b.id);
+//     return pokemonArray;
 // }
 
-
-//Ordenar por número
-// const orderByNumber = (pokemonList) => {
-//     //console.log(pokemonList);
-//     const pokemonArray = [];
-//     for(let i = 0 ; i < pokemonList.length ; i++){
-//         pokemonArray.push("#" + pokemonList[i].num + " " + pokemonList[i].name);
-//     }
-//     return pokemonArray;   
+// const orderByNumDesc = (data) => {
+//     let pokemonArray  = data.sort((a,b) => b.id - a.id);
+//     return pokemonArray;
 // }
-
-// const findPokemon = () => { //Encontrar pokemon por nombre
-//     pokemonObject = POKEMON.pokemon.find(pokemonName => pokemonName.name === getPokemon());
-//     console.table(pokemonObject);
-//     return pokemonObject;
+// const orderByNameAsc = (data) => {
+//     let pokemonArray = data.sort(function(a,b){
+//         if(a.name < b.name){
+//             return -1;
+//         } if(a-name > b.name){
+//             return 1;
+//         } return 0;
+//     });
+//     return pokemonArray;
 // }
-
-// const findPokemonNum = () => { //Encontrar pokemon por numero
-//     pokemonObject = POKEMON.pokemon.find(pokemonId => pokemonId.id == getPokemon());
-//     console.table(pokemonObject);
-//     return pokemonObject;
+// const orderByNameDesc = (data) => {
+//     let pokemonArray = data.sort(function(a,b){
+//         if(a.name > b.name){
+//             return -1;
+//         } if(a-name < b.name){
+//             return 1;
+//         } return 0;
+//     });
+//     return pokemonArray;
 // }
-
-// const displayPokemon = () => { //Realizar búsqueda
-//     findPokemon();
-//     if(pokemonObject == undefined){
-//         findPokemonNum();
-//         displayInfo();
-//     } else {
-//         displayInfo();
-//     }
-// }
-
-
-
-// const filterType = (typeToFilter) => {
-//     console.log(POKEMON.pokemon.filter(x => x.type[0] === typeToFilter || x.type[1] === typeToFilter));
-// }
-// filterType("Fire");
-
-// const filterWeaknesses = (data, weaknesses) => {
-//     const arrayWeaknesses = [];
-//     for(let i = 0 ; i <= data.length ; i++){
-//         for(let j = 0 ; i <= data[i].weaknesses.length ; j++){
-//             if(data[i].weaknesses[j] == weaknesses){
-//                 arrayWeaknesses.push(data[i]);
-//                 break;
-//             }
-//         }    
-//     }
-//     console.log(arrayWeaknesses);
-    
-// }
-
-// filterWeaknesses(POKEMON.pokemon, "Water");
-
-// const filterPokemon = (data, whatTofilter, valueToCompare) => {
-    
-//     return data.filter(pokemon => pokemon[whatTofilter].forEach(pokemon => {pokemon == valueToCompare}));
-// }
-
-
-
-
-//let filteredArray = POKEMON.pokemon.filter(x => x.type[0] == "Poison" || x.type[1] == "Poison");
-// console.log(filteredArray);
-
-/*const printPokemon = (itemToPrint) => {
-    document.getElementsByClassName("pokemonInfo").innerHTML = itemToPrint;
-}*/
-
-// const filterArray = () => {
-//     //let searchType = "Poison";
-//     for(let i = 0 ; i <= 2 ; i++){
-//         let filteredArray = POKEMON.pokemon.filter(x => x.type[i] == "Poison");
-//         console.log(filteredArray);
-//     }
-// }
-// filterArray();
-
-//const searchPokemon = POKEMON.pokemon.find(pokemonName => pokemonName.name === selectedPokemon); //Buscar un pokemon por nombre
-//console.table(searchPokemon);
-
-/* ESTA FUNCIONABA SOLO CON NOMBRE, AUN SIN NUM OR FAVOR NO LA CAGUES
-const displayPokemon = () => {
-    const pokemonInfo = POKEMON.pokemon.find(pokemonName => pokemonName.name === getPokemonName());
-    console.table(pokemonInfo);
-    return pokemonInfo;
-}
-*/
-
-/* ESTA SI FUNCIONA
-const getName = () => {
-    selectedPokemon = document.getElementById("searchBar").value;
-    console.log(selectedPokemon);
-    return selectedPokemon;
-}
-
-let searchPokemon = POKEMON.pokemon.find(pokemonName => pokemonName.name === selectedPokemon);
-console.table(searchPokemon);
-*/
-
-//const pokeArray = ["img","num","name","type","next_evolution","prev_evolution","description","weaknesses","height","weight","spawn_chance","spawn_time","egg","candy_count"]
-
-//const showProperties = searchPokemon.forEach();
-
-
-/*const searchPokemon = POKEMON.pokemon.find(function(pokemonName){
-    if(pokemonName.name === selectedPokemon){
-        return true;
-    }
-});
-*/
-
-/*
-const chosePokemon = (chosenPokemon) => {
-    return chosePokemon;
-}
-
-console.log(POKEMON.pokemon.find(chosePokemon).type);
-
-*/
-//This variable shows the complete array of the pokemon selected
-/*
-var displayPokemon = POKEMON.pokemon.find(function(pokemonName) {
-    return pokemonName.name == "Charmander";
-}); 
-*/
-
-
-
-//const displayPokemon = POKEMON.pokemon.find(wantedPokemon => wantedPokemon.name == document.getElementById("searchBar").value);
-/*
-const displayPokemon = POKEMON.pokemon.find(function(pokemonName) {
-    return pokemonName.name == document.getElementById("searchBar").value;
-}
-);
-
-document.getElementById('searchButton').addEventListener('click',displayPokemon,false);
-*/
-//POKEMON.pokemon.find(wantedPokemon);
-
-/*
-const pokeArray = [num, name, type, description];
-
-const showRandom = () => {
-    randomPokem.
-};
-
-const showPoke = () => {
-    document.getElementsByClassName("pokemonInfo").innerHTML = rpokeArray.forEach(element => {
-        
-    });
-}
-*/
-
-/*
-const showRandomPokemon = () => {
-    pickPokemon();
-    document.getElementById("pokemonNumber").innerHTML = "#"+randomPokemon.num;
-    document.getElementById("pokemonName").innerHTML = randomPokemon.name;
-}
-
-
-showRandomPokemon();
-*/
-/*
-pickPokemon();
-console.log(randomPokemon.name);
-console.log(randomPokemon.num);
-console.log(randomPokemon.type);
-console.log(randomPokemon.weaknesses);
-*/
-
-
+//orderByNumDesc(window.POKEMON.pokemon);
+// console.log(orderByNameDesc(window.POKEMON.pokemon));
