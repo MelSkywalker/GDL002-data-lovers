@@ -39,9 +39,10 @@
       <span class="pokemonName" id="pokeName"></span>
     </div>
 
-    <div class="pokemonInfo">
+    <div class="pokemonInfo" id="divType">
       <label for="pokemonTypeSpan">Tipo: </label>
       <span class="pokemonTypes" id="pokeType" name="pokemonTypeSpan"></span>
+      <div id="divTypeImg"></div>
     </div>
 
     <div class="pokemonInfo">
@@ -69,9 +70,10 @@
       <span class="pokemonWeight" id="pokeWeight" name="pokemonWeightSpan"></span>
     </div>
 
-    <div class="pokemonInfo">
+    <div class="pokemonInfo" id="divWeaknesses">
       <label for="pokemonWeaknessesSpan">Debilidades: </label>
       <span class="pokemonWeaknesses" id="pokeWeaknesses" name="pokemonWeaknessesSpan"></span>
+      <div id="divWeaknessesImg"></div>
     </div>
 
     <div class="pokemonInfo">
@@ -110,12 +112,12 @@
     <!-- -------Obtener CP Máximo------ -->
     <div id="divMaxCP">
       <label for="inputCP">Ingresa los PC de tu Pokémon: </label>
-      <input type="text" id="idInputCP" name="inputCP">
+      <input type="text" id="idInputCP" name="inputCP" onfocus="this.value=''">
       
       <input type="button" value="Calcular" id="calculateButton">
 
       <!-- Resultado -->
-      <label>Nuevo CP estimado: </label>
+      <!-- <label id="idLabelNewCP">Nuevo CP estimado: </label> -->
       <label id="divCPcalc"></label>
     </div>
 
