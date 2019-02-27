@@ -1307,7 +1307,7 @@ var POKEMON = {
     ],
     "weaknessesImg": [
       "images/types/steel.png",
-      "images/types/pison.png"
+      "images/types/poison.png"
     ],
     "description": "Siempre que hay luna llena, salen en grupo para jugar. Al amanecer, los Clefairy, agotados, regresan a sus refugios de montaña para dormir acurrucados unos con otros.",
     "height": "0.61 m",
@@ -1448,7 +1448,7 @@ var POKEMON = {
     ],
     "weaknessesImg": [
       "images/types/steel.png",
-      "images/types/pison.png"
+      "images/types/poison.png"
     ],
     "description": "Jigglypuff tiene unas cuerdas vocales que ajustan sin problema la longitud de onda de su voz. Este Pokémon usa la habilidad que tiene para cantar con la longitud de onda necesaria para adormecer a su rival.",
     "height": "0.51 m",
