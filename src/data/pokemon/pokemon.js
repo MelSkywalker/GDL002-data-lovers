@@ -3090,10 +3090,12 @@ var POKEMON = {
     "name": "Magnemite",
     "img": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/081.png",
     "type": [
-      "Electric"
+      "Electric",
+      "Steel"
     ],
     "typeImg":[
       "images/types/electric.png",
+      "images/types/steel.png"
     ],
     "description": "Magnemite se engancha a las lÌneas de tensiÛn para nutrirse de electricidad. Cuando se producen apagones en las casas, es aconsejable revisar el autom·tico y comprobar que no hay PokÈmon de este tipo colgados de la caja de fusibles.",
     "height": "0.30 m",
@@ -3109,14 +3111,14 @@ var POKEMON = {
       2.17
     ],
     "weaknesses": [
+      "Ground",
       "Fire",
-      "Water",
-      "Ground"
+      "Fighting"
     ],
     "weaknessesImg":[
+      "images/types/ground.png",
       "images/types/fire.png",
-      "images/types/water.png",
-      "images/types/ground.png"
+      "images/types/fighting.png"
     ],
     "next_evolution": [
       {
@@ -3131,10 +3133,12 @@ var POKEMON = {
     "name": "Magneton",
     "img": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/082.png",
     "type": [
-      "Electric"
+      "Electric",
+      "Steel"
     ],
     "typeImg":[
       "images/types/electric.png",
+      "images/types/steel.png"
     ],
     "description": "Magneton emite una fuerte energÌa magnÈtica que causa estragos en los instrumentos mec·nicos. Por ello, en las ciudades se avisa con sirenas cuando hay concentraciones de estos PokÈmon.",
     "height": "0.99 m",
@@ -3146,14 +3150,14 @@ var POKEMON = {
     "spawn_time": "15:25",
     "multipliers": null,
     "weaknesses": [
+      "Ground",
       "Fire",
-      "Water",
-      "Ground"
+      "Fighting"
     ],
     "weaknessesImg":[
+      "images/types/ground.png",
       "images/types/fire.png",
-      "images/types/water.png",
-      "images/types/ground.png"
+      "images/types/fighting.png"
     ],
     "prev_evolution": [
       {
@@ -5724,8 +5728,8 @@ var POKEMON = {
     ],
     "weaknessesImg":[
       "images/types/bug.png",
-      "images/types/dark.png",
-      "images/types/ghost.png"
+      "images/types/ghost.png",
+      "images/types/dark.png"
     ]
   }
 ]

@@ -13,7 +13,7 @@ const filterPokemon = (data, whatToFilter, valueToCompare) => {
 
 //Función para ordenar por número o nombre, en orden ascendente o descendente
 const orderPokemon = (data, value, order) => {
-  let pokemonArray;
+  let pokemonArray = [];
   if (value == "num") {
     if(order == "asc") {
       pokemonArray = data.sort((a,b) => a.id - b.id);
