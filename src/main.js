@@ -241,4 +241,4 @@ const enableDOMElement = (element) => {
 // ----------------------------------------------------------------- ADD EVENT LISTENERS --------------------------------------------------------------------------
 document.getElementById("searchButton").addEventListener("click", () => displayScreen("search"));
 document.getElementById("calculateButton").addEventListener("click", () => displayMaxCP(globalPokemon));
-document.getElementById("typeNormal").addEventListener("click", () => selectPokemonList("order","name","asc"));
+document.getElementById("typeNormal").addEventListener("click", () => selectPokemonList("filter","weaknesses","Water"));

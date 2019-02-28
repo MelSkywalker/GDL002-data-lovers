@@ -5,14 +5,10 @@ const findPokemon = (data, getPokemon) => {
 };
 
 //Función para filtrar por debilidad o tipo
-const filterPokemon = (data, whatToFilter, valueToCompare) => {  
-  return data.filter(pokemon => {
-    for(let i = 0 ; i < pokemon[whatToFilter].length ; i++){
-      if(pokemon[whatToFilter][i] === valueToCompare){       
-        return pokemon;
-      }
-    }
-  });
+const filterPokemon = (data, whatToFilter, valueToCompare) => {
+  return data.filter(pokemonObject => (
+    pokemonObject[whatToFilter].includes(valueToCompare)
+  ));
 };
 
 //Función para ordenar por número o nombre, en orden ascendente o descendente
