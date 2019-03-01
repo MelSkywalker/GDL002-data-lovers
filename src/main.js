@@ -188,16 +188,17 @@ const displayPokemonList = (listToDisplay) => {
         const pokemonImg = document.createElement("img");
         const pokemonLink = document.createElement("a");
         pokemonDiv.className = "pokemonElement";
-        pokemonDiv.setAttribute("id","listDiv")
-
-        pokemonLabel.appendChild(document.createTextNode("#" + listToDisplay[i].num + " "));
-        pokemonLabel.appendChild(document.createTextNode(listToDisplay[i].name));
-        pokemonDiv.appendChild(pokemonLabel);
-        pokemonList.appendChild(pokemonDiv);
+        pokemonDiv.setAttribute("class","boxWrapper2");
+        pokemonImg.setAttribute("class","listPokeImg")
 
         pokemonImg.src = listToDisplay[i].img;
         pokemonFigure.appendChild(pokemonImg);
         pokemonDiv.appendChild(pokemonFigure);
+        pokemonList.appendChild(pokemonDiv);
+
+        pokemonLabel.appendChild(document.createTextNode("#" + listToDisplay[i].num + " "));
+        pokemonLabel.appendChild(document.createTextNode(listToDisplay[i].name));
+        pokemonDiv.appendChild(pokemonLabel);
         pokemonList.appendChild(pokemonDiv);
 
         pokemonLink.href = document.getElementById("pokemonCard");
@@ -235,6 +236,21 @@ const displayMaxCP = (pokemonObject) => {
     }
 };
 
+//------------------------------ DISPLAY MENU --------------------------------------------------------
+const showAndHide = (a,b,c) => {
+    const elementA = document.getElementById(a);
+    const elementB = document.getElementById(b);
+    const elementC = document.getElementById(c);
+    
+    elementB.style.display="none";
+    elementC.style.display="none";
+
+        if (elementA.style.display==="none"){
+            elementA.style.display = "block";
+        } else {
+            elementA.style.display="none";
+        }
+};
 //------------------------------------------------------------------ CLEAR FUNCTIONS ---------------------------------------------------------------------
 const clearElement = (element) => {
     document.getElementById(element).innerHTML = "";
@@ -313,13 +329,31 @@ document.getElementById("openBtn").addEventListener("click", openNav = () => {
 document.getElementById("closeBtn").addEventListener("click", closeNav = () => {
     document.getElementById("mySidenav").style.width = "0";
 });
+
+//Mostrar y esconder listas del menú
+document.getElementById("typeBtn").addEventListener("click", () => {
+    showAndHide ("typeMenu", "weakMenu", "orderMenu");
+} );
+document.getElementById("weakBtn").addEventListener("click", () => {
+    showAndHide ("weakMenu", "typeMenu", "orderMenu");
+} );
+document.getElementById("orderBtn").addEventListener("click", () => {
+    showAndHide ("orderMenu", "typeMenu", "weakMenu");
+} );
 // Abrir submenus
-document.getElementById("typeBtn").addEventListener("click", openSubMenu = () => {
-    document.getElementById("typeMenu").classList.toggle("show")
-});
-document.getElementById("weakBtn").addEventListener("click", openSubMenu = () => {
-    document.getElementById("weakMenu").classList.toggle("show")
-});
-document.getElementById("orderBtn").addEventListener("click", openSubMenu = () => {
-    document.getElementById("orderMenu").classList.toggle("show")
-});
+// document.getElementById("typeBtn").addEventListener("click", openSubMenu = () => {
+//     document.getElementById("typeMenu").classList.toggle("show")
+// });
+// document.getElementById("weakBtn").addEventListener("click", openSubMenu = () => {
+//     document.getElementById("weakMenu").classList.toggle("show")
+// });
+// document.getElementById("orderBtn").addEventListener("click", openSubMenu = () => {
+//     document.getElementById("orderMenu").classList.toggle("show")
+// });
+
+// const showSubMenu = (elementToShow, elementToHide1, elementToHide2) => {
+//     document.getElementById(elementToShow).classList.toggle("show");
+//     document.getElementById(elementToHide1).classList.toggle("hidden");
+//     document.getElementById(elementToHide2).classList.toggle("hidden");
+    
+// }

@@ -2,9 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0">
     <title>Pokédex Go!</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech" rel="stylesheet">
+
   </head>
   <body>
     <div id="root"></div>
@@ -17,7 +20,7 @@
               <button class="dropdown-btn" id="typeBtn"> Tipo </button>
               <!-- Submenu de tipo --> 
                   <nav id="typeMenu">
-                    <ul class="subMenu">
+                    <ul class="subMenu" id="submType">
                       <li><input type="button" value="Normal" class="subm" id ="typeNormal"></li>
                       <li><input type="button" value="Fighting" class="subm" id="typeFighting"></li>
                       <li><input type="button" value="Flying"class="subm" id="typeFlying"></li>
@@ -40,7 +43,7 @@
               <button class="dropdown-btn" id="weakBtn"> Debilidad </button> 
               <!-- Submenu de debilidades -->
                 <nav id="weakMenu">
-                    <ul class="subMenu">
+                    <ul class="subMenu" id="submWeak">
                       <li><input type="button" value="Normal" class="subm" id ="weakNormal"></li>
                       <li><input type="button" value="Fighting" class="subm" id="weakFighting"></li>
                       <li><input type="button" value="Flying" class="subm" id="weakFlying"></li>
@@ -63,7 +66,7 @@
               <button class="dropdown-btn" id="orderBtn"> Ordenar </button>
               <!-- Submenu para ordenar -->
               <nav id="orderMenu">
-                <ul class="subMenu">
+                <ul class="subMenu" id="submOrder">
                   <li>Nombre</li>
                   <li><button class="subm" id="orderAZ">A - Z</button></li>
                   <li><button class="subm" id="orderZA">Z - A</button></li>
@@ -74,7 +77,7 @@
               </nav>
             </div>
             <!-- Muestra barra nav -->
-            <span style="font-size:30px;cursor:pointer" class="openbtn" id="openBtn"> &#9776; </span>
+            <span style="font-size:30px;cursor:pointer" class="openbtn" id="openBtn"> <img src="images/blue-btn.gif"></span>
             <!-- Barra de búsqueda -->
             <input type="text" class="menuItems" placeholder=" # o Número" id="searchBar">
             <input type="button" value="Buscar" class="menuItems" id="searchButton">
@@ -82,57 +85,57 @@
     </header>
     <!-- FIN BARRA DE NAVEGACIÓN -->
 
-
-  <div id="pokemonCard">
-    <div class="pokemonInfo">
-      <figure>
+  <div id="pokemonCard" class="wrapper">
+    <div class="pokemonInfo box1 cardImg">
+      <figure></figure>
         <img class="pokemonImg" id="pokemonPicture">
       </figure>
     </div>
 
-    <div class="pokemonInfo">
+    <div class="pokemonInfo box2">
       <span class="pokemonNumber" id="pokeNum"></span>
       <span class="pokemonName" id="pokeName"></span>
     </div>
 
-    <div class="pokemonInfo" id="divType">
+    <div class="pokemonInfo box3" id="divType">
       <label for="pokemonTypeSpan">Tipo: </label>
       <span class="pokemonTypes" id="pokeType" name="pokemonTypeSpan"></span>
       <div id="divTypeImg"></div>
     </div>
 
+  <div class="box4">
     <div class="pokemonInfo">
       <label for="pokemonPreEvolutionSpan">Pre-evoluciones: </label>
       <span class="pokemonPreEvolutions" id="pokePreEvolution" name="pokemonPreEvolutionSpan"></span>
     </div>
-
     <div class="pokemonInfo">
       <label for="pokemonEvolutionSpan">Evoluciones: </label>
       <span class="pokemonEvolutions" id="pokeEvolution" name="pokemonEvolutionSpan"></span>
     </div>
+  </div>
 
-    <div class="pokemonInfo">
-      <label for="pokeDescriptionSpan">Descripción: </label>
-      <span class="pokemonDescription" id="pokeDescription" name="pokemonDescriptionSpan"></span>
-    </div>
-
+  <div class="pokemonInfo box5">
     <div class="pokemonInfo">
       <label for="pokeHeightSpan">Altura: </label>
       <span class="pokemonHeight" id="pokeHeight" name="pokemonHeight"></span>
     </div>
-
     <div class="pokemonInfo">
       <label for="pokeWeightSpan">Peso: </label>
       <span class="pokemonWeight" id="pokeWeight" name="pokemonWeightSpan"></span>
     </div>
+    <div class="pokemonInfo">
+        <label for="pokeDescriptionSpan">Descripción: </label>
+        <span class="pokemonDescription" id="pokeDescription" name="pokemonDescriptionSpan"></span>
+      </div>
+  </div>
 
-    <div class="pokemonInfo" id="divWeaknesses">
+    <div class="pokemonInfo box6" id="divWeaknesses">
       <label for="pokemonWeaknessesSpan">Debilidades: </label>
       <span class="pokemonWeaknesses" id="pokeWeaknesses" name="pokemonWeaknessesSpan"></span>
       <div id="divWeaknessesImg"></div>
     </div>
-
-    <div class="pokemonInfo">
+    
+    <div class="pokemonInfo box7">
       <p>Información de juego: </p>
       <div class="pokemonInfo pokemonGameInfo">
         <label for="frequencySpawnSpan">Frecuencia de aparición: </label>
@@ -143,6 +146,7 @@
         <label for="timeSpawnSpan">Tiempo de aparición: </label>
         <span class="pokemonInfo" id="timeSpawn" name="timeSpawnSpan"></span>
       </div>
+
       <div class="pokemonInfo pokemonGameInfo">
         <label for="kmEggSpan">Distancia para eclosión de huevo: </label>
         <span class="pokemonInfo" id="kmEgg" name="kmEggSpan"></span>
@@ -154,6 +158,16 @@
       </div>
     </div>
 
+    <div class="box8" id="divMaxCP">
+        <label for="inputCP">Ingresa los PC de tu Pokémon: </label>
+        <input type="text" id="idInputCP" name="inputCP" onfocus="this.value=''">
+        
+        <input type="button" value="Calcular" id="calculateButton">
+  
+        <!-- Resultado -->
+        <label id="divCPcalc"></label>
+    </div>
+
     <!-- <div id="divCountdownBar">
       <div id="divTimeLeft">
       </div>
@@ -162,18 +176,17 @@
   </div>
     <!-- ---------------------- PIKEMON LIST ------------------------------------- -->
 
-    <div id="pokemonList"></div>
+    <div id="pokemonList" class="wrapper2"></div>
 
     <!-- -------Obtener CP Máximo------ -->
-    <div id="divMaxCP">
+    <!-- <div class="box8" id="divMaxCP">
       <label for="inputCP">Ingresa los PC de tu Pokémon: </label>
       <input type="text" id="idInputCP" name="inputCP" onfocus="this.value=''">
       
       <input type="button" value="Calcular" id="calculateButton">
 
-      <!-- Resultado -->
       <label id="divCPcalc"></label>
-    </div>
+    </div> -->
 
     <footer> Creado por Mel y Share :)</footer>
 
