@@ -4038,7 +4038,7 @@ var POKEMON = {
       "Grass",
       "Ice"
     ],
-    "weaknesses":[
+    "weaknessesImg":[
       "images/types/water.png",
       "images/types/grass.png",
       "images/types/ice.png"
