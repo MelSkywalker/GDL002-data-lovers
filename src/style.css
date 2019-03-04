@@ -4,34 +4,31 @@
 }
 
 /* Display pantallas */
-<<<<<<< HEAD
+
 #divMaxCP{
   display: none;
-=======
+}
+
 #pokemonCard{
    display: none;
 }
+/* LISTS */
 #pokemonList{
   display: flex;
   display: none;
   flex-direction: row;
   justify-content: flex-start;
 }
-#divMaxCP{
-   display: none;
-}
 .boxWrapper2{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 30%;
+  width: 25%;
   float: left;
   margin: 10px;
-  border: black;
 }
 .listPokeImg{
   flex-wrap: wrap;
->>>>>>> d66f1d179a7008b049fe0c66adf7a08a0ccb7dac
 }
 #pokemonCard{
    display: none;
@@ -187,67 +184,11 @@
    z-index: 0;
  }*/
 
-<<<<<<< HEAD
- .pokemonImg{
-   z-index: 10;
-   width: 40%;
-   height: 40%; 
- }
- 
- .listPokeImg{
-  width: 40%;
-  height: 40%; 
-}
-
- .wrapper {
-  display:grid;
-  grid-gap:1em;
-  grid-auto-rows: minmax(100px, auto);
-  grid-template-columns: 3fr 1fr 2fr;
-  grid-template-rows: repeat(6, 1fr);
-  padding: 1em;
-}
-
-.wrapper > div {
-  background: #eee;
-  padding: 1em;
-  text-align: center;
-  vertical-align: middle;
-}
-
-.wrapper > div:nth-child(odd) {
-  background: #ddd;
-}
-
-.box1 { /* Imagen */
-  grid-column: 1/2;
-  grid-row: 1/4;
-}
-
-.box2 { /* Numero & Nombre */
-  grid-column: 2/4;
-  grid-row: 1/2;
-}
-
-.box3 { /* Tipo */
-  grid-column:2/4;
-  grid-row: 2/3;
-}
-
-.box4 { /* Evoluciones */
-  grid-column: 2/4;
-  grid-row: 3/4;
-}
-
-.box5 { /* Descripción */
-  grid-column: 1/4;
-  grid-row: 4/5;
-}
-
-=======
 .listLabels{
   flex-wrap: wrap;
 }
+
+
 #typeMenu{
   display: none;
 }
@@ -260,7 +201,7 @@
 /* Barra de navegación */
 .topNav {
    overflow: hidden;
-   background-color: #e9e9e9;
+   background-color: #fb0505;
    margin-right:14px;
  }
  /* Barra de búsqueda */
@@ -432,7 +373,6 @@
   grid-row: 4/5;
 }
 
->>>>>>> d66f1d179a7008b049fe0c66adf7a08a0ccb7dac
 .box6 { /* Debilidades */
   grid-column: 1/4;
   grid-row: 5/6;
@@ -459,16 +399,8 @@ grid-row: 6/7;
   /* z-index: 60; */
 }
 
-<<<<<<< HEAD
 /* .boxWrapper2{
   margin: 0;
   grid-column: 1/2;
   grid-row: 1/2;
 }  */
-=======
-.boxWrapper2{
-  margin: 0;
-  grid-column: 1/2;
-  grid-row: 1/2;
-} 
->>>>>>> d66f1d179a7008b049fe0c66adf7a08a0ccb7dac

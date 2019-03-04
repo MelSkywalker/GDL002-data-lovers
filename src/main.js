@@ -326,13 +326,13 @@ document.getElementById("orderZA").addEventListener("click", () => selectPokemon
 document.getElementById("order1").addEventListener("click", () => selectPokemonList("order","num","asc"));
 document.getElementById("order151").addEventListener("click", () => selectPokemonList("order","num","desc"));
 
-// Abrir y cerrar nav bar
-document.getElementById("openBtn").addEventListener("click", openNav = () => { 
-    document.getElementById("mySidenav").style.width = "150px";
-});
-document.getElementById("closeBtn").addEventListener("click", closeNav = () => {
-    document.getElementById("mySidenav").style.width = "0";
-});
+// // Abrir y cerrar nav bar
+// document.getElementById("openBtn").addEventListener("click", openNav = () => { 
+//     document.getElementById("mySidenav").style.width = "150px";
+// });
+// document.getElementById("closeBtn").addEventListener("click", closeNav = () => {
+//     document.getElementById("mySidenav").style.width = "0";
+// });
 
 //Mostrar y esconder listas del menú
 document.getElementById("typeBtn").addEventListener("click", () => {

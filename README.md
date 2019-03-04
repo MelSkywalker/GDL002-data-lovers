@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> d66f1d179a7008b049fe0c66adf7a08a0ccb7dac
 # Pokédex Go!
 
 Nuestro proyecto, llamado Pokédex Go, se basa en la mini computadora que se dedicaba a catalogar la información correspondiente de los varios tipos de Pokémon que existía en la serie/manga y en especial presentando información relevante a la app Pokémon Go.
