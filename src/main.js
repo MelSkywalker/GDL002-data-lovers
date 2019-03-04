@@ -278,6 +278,14 @@ const showAndHide = (a,b,c) => {
             elementA.style.display="none";
         }
 };
+const openNav = () => {
+    return document.getElementById("mySidenav").style.width = "150px";
+};
+
+const closeNav = () => {
+    return document.getElementById("mySidenav").style.width = "0";
+
+};
 
 // ----------------------------------------------------------------- ADD EVENT LISTENERS --------------------------------------------------------------------------
 document.getElementById("searchButton").addEventListener("click", () => displayScreen("search"));
@@ -327,12 +335,8 @@ document.getElementById("order1").addEventListener("click", () => selectPokemonL
 document.getElementById("order151").addEventListener("click", () => selectPokemonList("order","num","desc"));
 
 // // Abrir y cerrar nav bar
-document.getElementById("openBtn").addEventListener("click", openNav = () => { 
-    document.getElementById("mySidenav").style.width = "150px";
-});
-document.getElementById("closeBtn").addEventListener("click", closeNav = () => {
-    document.getElementById("mySidenav").style.width = "0";
-});
+document.getElementById("openBtn").addEventListener("click", openNav);
+document.getElementById("closeBtn").addEventListener("click", closeNav);
 
 //Mostrar y esconder listas del menú
 document.getElementById("typeBtn").addEventListener("click", () => {
