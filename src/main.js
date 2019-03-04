@@ -43,7 +43,9 @@ const displayScreen = (screenName) => {
         displayList.style.display = "none";
         displayPokemonCard.style.display = "block";
         displayPokemonCP.style.display = "block";
-        pickPokemon(window.POKEMON.pokemon);
+        displayInfo(pickPokemon(window.POKEMON.pokemon));
+        clearElement("divCPcalc");
+        clearValue("idInputCP");
         return;
         }
 };
@@ -184,16 +186,17 @@ const displayPokemonList = (listToDisplay) => {
     for (let i = 0 ; i < listToDisplay.length ; i++) {
         const pokemonDiv = document.createElement("div");
         const pokemonLabel = document.createElement("label");
-        const pokemonFigure = document.createElement("figure");
+        // const pokemonFigure = document.createElement("figure");
         const pokemonImg = document.createElement("img");
         const pokemonLink = document.createElement("a");
         pokemonDiv.className = "pokemonElement";
         pokemonDiv.setAttribute("class","boxWrapper2");
-        pokemonImg.setAttribute("class","listPokeImg")
+        pokemonImg.setAttribute("class","listPokeImg");
+        pokemonLabel.setAttribute("class", "listLabels");
 
         pokemonImg.src = listToDisplay[i].img;
-        pokemonFigure.appendChild(pokemonImg);
-        pokemonDiv.appendChild(pokemonFigure);
+        // pokemonFigure.appendChild(pokemonImg);
+        pokemonDiv.appendChild(pokemonImg);
         pokemonList.appendChild(pokemonDiv);
 
         pokemonLabel.appendChild(document.createTextNode("#" + listToDisplay[i].num + " "));
@@ -236,21 +239,6 @@ const displayMaxCP = (pokemonObject) => {
     }
 };
 
-//------------------------------ DISPLAY MENU --------------------------------------------------------
-const showAndHide = (a,b,c) => {
-    const elementA = document.getElementById(a);
-    const elementB = document.getElementById(b);
-    const elementC = document.getElementById(c);
-    
-    elementB.style.display="none";
-    elementC.style.display="none";
-
-        if (elementA.style.display==="none"){
-            elementA.style.display = "block";
-        } else {
-            elementA.style.display="none";
-        }
-};
 //------------------------------------------------------------------ CLEAR FUNCTIONS ---------------------------------------------------------------------
 const clearElement = (element) => {
     document.getElementById(element).innerHTML = "";
@@ -273,6 +261,22 @@ const removeChild = (element) => {
     while(parentElement.firstChild){
         parentElement.removeChild(parentElement.firstChild);
     }
+};
+
+//------------------------------ DISPLAY MENU --------------------------------------------------------
+const showAndHide = (a,b,c) => {
+    const elementA = document.getElementById(a);
+    const elementB = document.getElementById(b);
+    const elementC = document.getElementById(c);
+    
+    elementB.style.display="none";
+    elementC.style.display="none";
+
+        if (elementA.style.display==="none"){
+            elementA.style.display = "block";
+        } else {
+            elementA.style.display="none";
+        }
 };
 
 // ----------------------------------------------------------------- ADD EVENT LISTENERS --------------------------------------------------------------------------
@@ -340,20 +344,6 @@ document.getElementById("weakBtn").addEventListener("click", () => {
 document.getElementById("orderBtn").addEventListener("click", () => {
     showAndHide ("orderMenu", "typeMenu", "weakMenu");
 } );
-// Abrir submenus
-// document.getElementById("typeBtn").addEventListener("click", openSubMenu = () => {
-//     document.getElementById("typeMenu").classList.toggle("show")
-// });
-// document.getElementById("weakBtn").addEventListener("click", openSubMenu = () => {
-//     document.getElementById("weakMenu").classList.toggle("show")
-// });
-// document.getElementById("orderBtn").addEventListener("click", openSubMenu = () => {
-//     document.getElementById("orderMenu").classList.toggle("show")
-// });
 
-// const showSubMenu = (elementToShow, elementToHide1, elementToHide2) => {
-//     document.getElementById(elementToShow).classList.toggle("show");
-//     document.getElementById(elementToHide1).classList.toggle("hidden");
-//     document.getElementById(elementToHide2).classList.toggle("hidden");
-    
-// }
+// ONLOAD random pokemon
+document.getElementById("pokemonCard").addEventListener("load",displayScreen("home"));
