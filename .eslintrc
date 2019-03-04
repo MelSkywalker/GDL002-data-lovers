@@ -7,10 +7,10 @@
   },
   "extends": "eslint:recommended",
   "globals": {
-    "cipher": false
+    "dataLovers": false
   },
   "rules": {
     "no-console": 0,
-    "semi": 2,
+    "semi": 2
   }
 }
