@@ -107,6 +107,13 @@ También se hizo un cambio respecto a la funcionalidad extra de la Pokédex: Al 
 
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> origin/develop
 # Data Lovers
 
 ## Índice
