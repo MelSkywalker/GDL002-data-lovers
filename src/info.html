@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0">
+  <title>Pokédex Go!</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <!-- <div id="test"> -->
+  <header>
+      <!-- Muestra barra nav -->
+      <span style="font-size:30px;cursor:pointer" class="openbtn" id="openBtn"> <img src="images/blue-btn.gif"></span>
+      <!-- Barra de búsqueda -->
+      <input type="text" class="menuItems" placeholder=" # o Número" id="searchBar">
+      <input type="button" value="Buscar" class="menuItems" id="searchButton">
+    </div>
+  </header>
+  <!-- FIN BARRA DE NAVEGACIÓN -->
+  
+  <div id="pokemonCard" class="wrapper">
+    <div class="pokemonInfo box1 cardImg">
+      <figure>
+        <img class="pokemonImg" id="pokemonPicture">
+      </figure>
+    </div>
+
+    <div class="pokemonInfo box2">
+      <span class="pokemonNumber" id="pokeNum"></span>
+      <span class="pokemonName" id="pokeName"></span>
+    </div>
+
+    <div class="pokemonInfo box3" id="divType">
+      <label for="pokemonTypeSpan">Tipo: </label>
+      <span class="pokemonTypes" id="pokeType" name="pokemonTypeSpan"></span>
+      <div id="divTypeImg"></div>
+    </div>
+
+    <div class="pokemonInfo box4">
+      <div>
+        <label for="pokemonPreEvolutionSpan">Pre-evoluciones: </label>
+        <span class="pokemonPreEvolutions" id="pokePreEvolution" name="pokemonPreEvolutionSpan"></span>
+      </div>
+      <div>
+        <label for="pokemonEvolutionSpan">Evoluciones: </label>
+        <span class="pokemonEvolutions" id="pokeEvolution" name="pokemonEvolutionSpan"></span>
+      </div>
+    </div>
+
+    <div class="pokemonInfo box5">
+      <div>
+        <label for="pokeHeightSpan">Altura: </label>
+        <span class="pokemonHeight" id="pokeHeight" name="pokemonHeight"></span>
+      </div>
+      <div>
+        <label for="pokeWeightSpan">Peso: </label>
+        <span class="pokemonWeight" id="pokeWeight" name="pokemonWeightSpan"></span>
+      </div>
+      <div>
+        <label for="pokeDescriptionSpan">Descripción: </label>
+        <span class="pokemonDescription" id="pokeDescription" name="pokemonDescriptionSpan"></span>
+      </div>
+    </div>
+
+    <div class="pokemonInfo box6" id="divWeaknesses">
+      <label for="pokemonWeaknessesSpan">Debilidades: </label>
+      <span class="pokemonWeaknesses" id="pokeWeaknesses" name="pokemonWeaknessesSpan"></span>
+      <div id="divWeaknessesImg"></div>
+    </div>
+
+    <div class="pokemonInfo box7">
+      <p>Información de juego: </p>
+      <div class="pokemonGameInfo">
+        <label for="frequencySpawnSpan">Frecuencia de aparición: </label>
+        <span id="frequencySpawn" name="frequencySpawnSpan"></span>
+      </div>
+
+      <div class="pokemonGameInfo">
+        <label for="timeSpawnSpan">Tiempo de aparición: </label>
+        <span id="timeSpawn" name="timeSpawnSpan"></span>
+      </div>
+
+      <div class="pokemonGameInfo">
+        <label for="kmEggSpan">Distancia para eclosión de huevo: </label>
+        <span id="kmEgg" name="kmEggSpan"></span>
+      </div>
+
+      <div class="pokemonGameInfo">
+        <label for="candiesNumberSpan">Número de dulces para evolucionar: </label>
+        <span id="candies" name="candiesSpan"></span>
+      </div>
+    </div>
+
+    <div class="pokemonInfo box8" id="divMaxCP">
+      <label for="inputCP">Ingresa los PC de tu Pokémon: </label>
+      <input type="text" id="idInputCP" name="inputCP" onfocus="this.value=''">
+
+      <input type="button" value="Calcular" id="calculateButton">
+
+      <!-- Resultado -->
+      <label id="divCPcalc"></label>
+    </div>
+
+    <!-- <div id="divCountdownBar">
+              <div id="divTimeLeft">
+              </div>
+            </div> -->
+
+
+    <footer> Creado por Mel y Share :)</footer>
+
+  <script src="./data/pokemon/pokemon.js"></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+  <script src="info.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0">
+  <title>Pokédex Go!</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <!-- <div id="test"> -->
+  <header>
+    <div class="topNav">
+      <!-- Contenido slide menu -->
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" id="closeBtn"> &times; </a>
+        <button class="dropdown-btn" id="typeBtn"> Tipo </button>
+      <!-- Muestra barra nav -->
+      <span style="font-size:30px;cursor:pointer" class="openbtn" id="openBtn"> <img src="images/blue-btn.gif"></span>
+      <!-- Barra de búsqueda -->
+      <input type="text" class="menuItems" placeholder=" # o Número" id="searchBar">
+      <input type="button" value="Buscar" class="menuItems" id="searchButton">
+    </div>
+  </header>
+  <!-- FIN BARRA DE NAVEGACIÓN -->
+
+    <!-- ---------------------- POKEMON LIST ------------------------------------- -->
+
+    <!-- <footer> Creado por Mel y Share :)</footer> -->
+  </div>
+  <!-- </div> -->
+  <div id="pokemonList" class="wrapper2"></div>
+
+
+  <script src="./data/pokemon/pokemon.js"></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+  <script src="list.js"></script>
+
+
+</body>
+
+</html>
