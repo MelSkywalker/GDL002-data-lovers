@@ -14,32 +14,45 @@
   <div id="root"></div>
 
   <!-- <div id="test"> -->
-  <header>
-    <div class="topNav">
-      <!-- Contenido slide menu -->
-      <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" id="closeBtn"> &times; </a>
-        <button class="dropdown-btn" id="typeBtn"> Tipo </button>
-      <!-- Muestra barra nav -->
-      <span style="font-size:30px;cursor:pointer" class="openbtn" id="openBtn"> <img src="images/blue-btn.gif"></span>
-      <!-- Barra de búsqueda -->
-      <input type="text" class="menuItems" placeholder=" # o Número" id="searchBar">
-      <input type="button" value="Buscar" class="menuItems" id="searchButton">
-    </div>
-  </header>
+    <header>
+        <ul class="subMenu" id="submType">
+          <p>TIPOS:</p>
+            <li><input type="button" value="Normal" class="subm" id="typeNormal"></li>
+            <li><input type="button" value="Fighting" class="subm" id="typeFighting"></li>
+            <li><input type="button" value="Flying" class="subm" id="typeFlying"></li>
+            <li><input type="button" value="Poison" class="subm" id="typePoison"></li>
+            <li><input type="button" value="Ground" class="subm" id="typeGround"></li>
+            <li><input type="button" value="Rock" class="subm" id="typeRock"></li>
+            <li><input type="button" value="Bug" class="subm" id="typeBug"></li>
+            <li><input type="button" value="Ghost" class="subm" id="typeGhost"></li>
+            <li><input type="button" value="Steel" class="subm" id="typeSteel"></li>
+            <li><input type="button" value="Fire" class="subm" id="typeFire"></li>
+            <li><input type="button" value="Water" class="subm" id="typeWater"></li>
+            <li><input type="button" value="Electric" class="subm" id="typeElectric"></li>
+            <li><input type="button" value="Psychic" class="subm" id="typePsychic"></li>
+            <li><input type="button" value="Ice" class="subm" id="typeIce"></li>
+            <li><input type="button" value="Dragon" class="subm" id="typeDragon"></li>
+            <li><input type="button" value="Fairy" class="subm" id="typeFairy"></li>
+            <li><input type="button" value="Dark" class="subm" id="typeDark"></li>
+          </ul>
+        <!-- Muestra barra nav -->
+        <span style="font-size:30px;cursor:pointer" class="openbtn" id="openBtn"> <img src="images/blue-btn.gif"></span>
+        <!-- Barra de búsqueda -->
+        <input type="text" class="menuItems" placeholder=" # o Número" id="searchBar">
+        <input type="button" value="Buscar" class="menuItems" id="searchButton">
+      </div>
+    </header>
   <!-- FIN BARRA DE NAVEGACIÓN -->
-
+  
     <!-- ---------------------- POKEMON LIST ------------------------------------- -->
+    <div id="pokemonList" class="wrapper2"></div>
 
-    <!-- <footer> Creado por Mel y Share :)</footer> -->
-  </div>
+    <footer> Creado por Mel y Share :)</footer>
   <!-- </div> -->
-  <div id="pokemonList" class="wrapper2"></div>
-
 
   <script src="./data/pokemon/pokemon.js"></script>
   <script src="data.js"></script>
-  <script src="main.js"></script>
+  <!-- <script src="main.js"></script> -->
   <script src="list.js"></script>
 
 

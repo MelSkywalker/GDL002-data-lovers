@@ -59,9 +59,15 @@ const calculateMaxCP = (multiplier,cp) => {
   return Math.ceil(multiplier*cp);
 };
 
+//Seleccionar pokemon aleatorio
+const pickPokemon = (data) => {
+  return data[Math.floor(Math.random()*151)];
+};
+
 window.dataLovers = {
   findPokemon: findPokemon,
   filterPokemon: filterPokemon,
   orderPokemon: orderPokemon,
-  calculateMaxCP: calculateMaxCP
+  calculateMaxCP: calculateMaxCP,
+  pickPokemon: pickPokemon
 };

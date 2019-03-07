@@ -25,10 +25,10 @@
   <!-- FIN BARRA DE NAVEGACIÓN -->
   
   <div id="pokemonCard" class="wrapper">
-    <div class="pokemonInfo box1 cardImg">
-      <figure>
+    <div class="pokemonInfo box1 cardImg" id="pokeImg">
+      <!-- <figure>
         <img class="pokemonImg" id="pokemonPicture">
-      </figure>
+      </figure> -->
     </div>
 
     <div class="pokemonInfo box2">
@@ -75,7 +75,7 @@
     </div>
 
     <div class="pokemonInfo box7">
-      <p>Información de juego: </p>
+      <h2>Información de juego: </h2>
       <div class="pokemonGameInfo">
         <label for="frequencySpawnSpan">Frecuencia de aparición: </label>
         <span id="frequencySpawn" name="frequencySpawnSpan"></span>
@@ -100,11 +100,14 @@
     <div class="pokemonInfo box8" id="divMaxCP">
       <label for="inputCP">Ingresa los PC de tu Pokémon: </label>
       <input type="text" id="idInputCP" name="inputCP" onfocus="this.value=''">
-
       <input type="button" value="Calcular" id="calculateButton">
-
       <!-- Resultado -->
       <label id="divCPcalc"></label>
+    </div>
+
+    <div>
+      <h2>Estadísticas: </h2>
+      <canvas id="statsChart" width="400" height="400"></canvas>
     </div>
 
     <!-- <div id="divCountdownBar">
@@ -115,9 +118,10 @@
 
     <footer> Creado por Mel y Share :)</footer>
 
+  <script src="node_modules/chart.js/dist/Chart.js"></script>
   <script src="./data/pokemon/pokemon.js"></script>
   <script src="data.js"></script>
-  <script src="main.js"></script>
+  <!-- <script src="main.js"></script> -->
   <script src="info.js"></script>
 
 

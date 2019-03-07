@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0">
+    <title>Pokédex Go!</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- <div id="test"> -->
+    <header>
+        <!-- Muestra barra nav -->
+        <span style="font-size:30px;cursor:pointer" class="openbtn" id="openBtn"> <img src="images/blue-btn.gif"></span>
+        <!-- Barra de búsqueda -->
+        <input type="text" class="menuItems" placeholder=" # o Número" id="searchBar">
+        <input type="button" value="Buscar" class="menuItems" id="searchButton">
+        </div>
+    </header>
+    <!-- FIN BARRA DE NAVEGACIÓN -->
+
+    <div id="pokemonCardGame">
+        <div id="divAnswer">
+            <span id="spanAnswer"></span>
+        </div>
+        <div class="pokemonGame" id="divPictureGame">
+            <figure>
+                <img class="pokemonSilhouette pokemonGameImg" id="pokemonPictureGame">
+            </figure>
+        </div>
+
+            <label for="answerSearchBar">Es: </label>
+            <input type="text" class="answerItems" placeholder=" # o Número" id="answerInput">
+            <input type="button" value="Go!" class="answerItems" id="answerButton">    
+        </div>
+        <div>
+            <input type="button" value="Jugar otra vez!" id="playAgainButton">
+        </div>
+    </div>
+
+    <footer> Creado por Mel y Share :)</footer>
+
+    <script src="./data/pokemon/pokemon.js"></script>
+    <script src="data.js"></script>
+    <!-- <script src="main.js"></script> -->
+    <script src="game.js"></script>
+
+
+</body>
+
+</html>

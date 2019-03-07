@@ -113,7 +113,6 @@ const findTypes = (pokemonObject) => {
             selectPokemonList("filter","type", pokemonObject.type[i]);
         });
     }
-    // removeChild("pokemonList");
 };
 
 const findWeaknesses = (pokemonObject) => {
@@ -138,7 +137,6 @@ const findWeaknesses = (pokemonObject) => {
             selectPokemonList("filter","type", pokemonObject.weaknesses[i]);
         });
     }
-    // removeChild("pokemonList");
 };
 
 const findEvolution = (data, evolution) => {
@@ -239,7 +237,7 @@ const displayMaxCP = (pokemonObject) => {
     }
 };
 
-//------------------------------------------------------------------ CLEAR FUNCTIONS ---------------------------------------------------------------------
+//-------------------------------------- CLEAR FUNCTIONS ---------------------------------------------
 const clearElement = (element) => {
     document.getElementById(element).innerHTML = "";
 };
@@ -282,8 +280,6 @@ const showAndHide = (a,b,c) => {
 // ----------------------------------------------------------------- ADD EVENT LISTENERS --------------------------------------------------------------------------
 document.getElementById("searchButton").addEventListener("click", () => displayScreen("search"));
 document.getElementById("calculateButton").addEventListener("click", () => displayMaxCP(globalPokemon));
-// document.getElementById("test01").addEventListener("click", () => selectPokemonList("order","num","desc"));
-// document.getElementById("test02").addEventListener("click", () => selectPokemonList("order","num","asc"));
 
 document.getElementById("typeNormal").addEventListener("click", () => selectPokemonList("filter","type","Normal"));
 document.getElementById("typeFighting").addEventListener("click", () => selectPokemonList("filter","type","Fighting"));
