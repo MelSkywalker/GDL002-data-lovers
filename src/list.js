@@ -22,11 +22,12 @@ const displayPokemonList = (listToDisplay) => {
     for (let i = 0 ; i < listToDisplay.length ; i++) {
         const pokemonDiv = document.createElement("div");
         const pokemonLabel = document.createElement("label");
+        const pokemonDivText = document.createElement("div");
         // const pokemonFigure = document.createElement("figure");
         const pokemonImg = document.createElement("img");
         const pokemonLink = document.createElement("a");
         pokemonDiv.className = "pokemonElement";
-        pokemonDiv.setAttribute("class","boxWrapper2");
+        // pokemonDiv.setAttribute("class","boxWrapper2");
         pokemonImg.setAttribute("class","listPokeImg");
         pokemonLabel.setAttribute("class", "listLabels");
         
@@ -37,7 +38,8 @@ const displayPokemonList = (listToDisplay) => {
 
         pokemonLabel.appendChild(document.createTextNode("#" + listToDisplay[i].num + " "));
         pokemonLabel.appendChild(document.createTextNode(listToDisplay[i].name));
-        pokemonDiv.appendChild(pokemonLabel);
+        pokemonDivText.appendChild(pokemonLabel);
+        pokemonDiv.appendChild(pokemonDivText);
         pokemonList.appendChild(pokemonDiv);
 
         pokemonLink.href = document.getElementById("pokemonCard");
@@ -72,25 +74,25 @@ document.getElementById("typeDragon").addEventListener("click", () => selectPoke
 document.getElementById("typeFairy").addEventListener("click", () => selectPokemonList("filter","type","Fairy"));
 document.getElementById("typeDark").addEventListener("click", () => selectPokemonList("filter","type","Dark"));
 
-// document.getElementById("weakNormal").addEventListener("click", () => selectPokemonList("filter","weaknesses","Normal"));
-// document.getElementById("weakFighting").addEventListener("click", () => selectPokemonList("filter","weaknesses","Fighting"));
-// document.getElementById("weakFlying").addEventListener("click", () => selectPokemonList("filter","weaknesses","Flying"));
-// document.getElementById("weakPoison").addEventListener("click", () => selectPokemonList("filter","weaknesses","Poison"));
-// document.getElementById("weakGround").addEventListener("click", () => selectPokemonList("filter","weaknesses","Ground"));
-// document.getElementById("weakRock").addEventListener("click", () => selectPokemonList("filter","weaknesses","Rock"));
-// document.getElementById("weakBug").addEventListener("click", () => selectPokemonList("filter","weaknesses","Bug"));
-// document.getElementById("weakGhost").addEventListener("click", () => selectPokemonList("filter","weaknesses","Ghost"));
-// document.getElementById("weakSteel").addEventListener("click", () => selectPokemonList("filter","weaknesses","Steel"));
-// document.getElementById("weakFire").addEventListener("click", () => selectPokemonList("filter","weaknesses","Fire"));
-// document.getElementById("weakWater").addEventListener("click", () => selectPokemonList("filter","weaknesses","Water"));
-// document.getElementById("weakElectric").addEventListener("click", () => selectPokemonList("filter","weaknesses","Electric"));
-// document.getElementById("weakPsychic").addEventListener("click", () => selectPokemonList("filter","weaknesses","Psychic"));
-// document.getElementById("weakIce").addEventListener("click", () => selectPokemonList("filter","weaknesses","Ice"));
-// document.getElementById("weakDragon").addEventListener("click", () => selectPokemonList("filter","weaknesses","Dragon"));
-// document.getElementById("weakFairy").addEventListener("click", () => selectPokemonList("filter","weaknesses","Fairy"));
-// document.getElementById("weakDark").addEventListener("click", () => selectPokemonList("filter","weaknesses","Dark"));
+document.getElementById("weakNormal").addEventListener("click", () => selectPokemonList("filter","weaknesses","Normal"));
+document.getElementById("weakFighting").addEventListener("click", () => selectPokemonList("filter","weaknesses","Fighting"));
+document.getElementById("weakFlying").addEventListener("click", () => selectPokemonList("filter","weaknesses","Flying"));
+document.getElementById("weakPoison").addEventListener("click", () => selectPokemonList("filter","weaknesses","Poison"));
+document.getElementById("weakGround").addEventListener("click", () => selectPokemonList("filter","weaknesses","Ground"));
+document.getElementById("weakRock").addEventListener("click", () => selectPokemonList("filter","weaknesses","Rock"));
+document.getElementById("weakBug").addEventListener("click", () => selectPokemonList("filter","weaknesses","Bug"));
+document.getElementById("weakGhost").addEventListener("click", () => selectPokemonList("filter","weaknesses","Ghost"));
+document.getElementById("weakSteel").addEventListener("click", () => selectPokemonList("filter","weaknesses","Steel"));
+document.getElementById("weakFire").addEventListener("click", () => selectPokemonList("filter","weaknesses","Fire"));
+document.getElementById("weakWater").addEventListener("click", () => selectPokemonList("filter","weaknesses","Water"));
+document.getElementById("weakElectric").addEventListener("click", () => selectPokemonList("filter","weaknesses","Electric"));
+document.getElementById("weakPsychic").addEventListener("click", () => selectPokemonList("filter","weaknesses","Psychic"));
+document.getElementById("weakIce").addEventListener("click", () => selectPokemonList("filter","weaknesses","Ice"));
+document.getElementById("weakDragon").addEventListener("click", () => selectPokemonList("filter","weaknesses","Dragon"));
+document.getElementById("weakFairy").addEventListener("click", () => selectPokemonList("filter","weaknesses","Fairy"));
+document.getElementById("weakDark").addEventListener("click", () => selectPokemonList("filter","weaknesses","Dark"));
 
-// document.getElementById("orderAZ").addEventListener("click", () => selectPokemonList("order","name","asc"));
-// document.getElementById("orderZA").addEventListener("click", () => selectPokemonList("order","name","desc"));
-// document.getElementById("order1").addEventListener("click", () => selectPokemonList("order","num","asc"));
-// document.getElementById("order151").addEventListener("click", () => selectPokemonList("order","num","desc"));
+document.getElementById("orderAZ").addEventListener("click", () => selectPokemonList("order","name","asc"));
+document.getElementById("orderZA").addEventListener("click", () => selectPokemonList("order","name","desc"));
+document.getElementById("order1").addEventListener("click", () => selectPokemonList("order","num","asc"));
+document.getElementById("order151").addEventListener("click", () => selectPokemonList("order","num","desc"));

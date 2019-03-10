@@ -64,10 +64,39 @@ const pickPokemon = (data) => {
   return data[Math.floor(Math.random()*151)];
 };
 
+// const displayChart = (data) => {
+//   const statsChart = {
+//     type: "radar",
+//     data: {
+//       labels: ["Ataque base", "Defensa base", "Estamina base"],
+//       datasets: [{
+//           data: [data.stats.baseAttack, data.stats.baseDefense, data.stats.baseStamina]
+//       }]
+//     },
+//     options: {
+//       responsive: true
+//     }
+// });
+// };
+
+// const displayChart = (data) => {
+//   // const ctx = document.getElementById("statsChart");
+//   const statsChart = new chart(ctx, {
+//     type: "radar",
+//     data: {
+//       labels: ["Ataque base", "Defensa base", "Estamina base"],
+//       datasets: [{
+//           data: [data.stats.baseAttack, data.stats.baseDefense, data.stats.baseStamina]
+//       }]
+//   }
+// });
+// }
+
 window.dataLovers = {
   findPokemon: findPokemon,
   filterPokemon: filterPokemon,
   orderPokemon: orderPokemon,
   calculateMaxCP: calculateMaxCP,
-  pickPokemon: pickPokemon
+  pickPokemon: pickPokemon,
+  // displayChart: displayChart
 };

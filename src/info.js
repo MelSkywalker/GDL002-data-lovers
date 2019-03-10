@@ -26,7 +26,7 @@ const getPokemon = () => {
 
 //Validar si el texto escrito coincide con un Pokémon
 const validatePokemon = () => {
-    const wantedPokemon = dataLovers.findPokemon(window.POKEMON.pokemon, getPokemon());
+    const wantedPokemon = dataLovers.findPokemon(window.POKEMON.pokemon, getPokemon());    
     if (wantedPokemon == undefined) {
         return fail();
     }
@@ -128,6 +128,7 @@ const displayInfo = (pokemonObject) => {
     document.getElementById("timeSpawn").innerHTML = pokemonObject.spawn_time;
     document.getElementById("kmEgg").innerHTML = pokemonObject.egg;
     document.getElementById("candies").innerHTML = pokemonObject.candy_count;
+    // document.getElementById("statsChart").innerHTML = displayChart();
     
     clearValue("searchBar");
     if (pokemonObject.multipliers == null) {
@@ -161,29 +162,6 @@ const displayMaxCP = (pokemonObject) => {
     }
 };
 
-// const ctx = document.getElementById("statsChart");
-// const statsChart = new chart(ctx, {
-//     type: "radar",
-//     data: {
-//         fetch("https://pogoapi.net/api/v1/pokemon_stats.json")
-//         .then(function(pokemonStats.json){
-//             return pokemonStats.json();
-//         })
-//         .then(function(stasJson){
-            
-//         })
-//     }
-// })
-
-fetch('https://pogoapi.net/api/v1/pokemon_stats.json', {
-    mode: 'no-cors'
-})
-  .then(function(response) {
-    return response.text();
-  })
-  .then(function(stats) {
-    console.log(stats);
-  });
 //------------------------------------------------------------------ CLEAR FUNCTIONS ---------------------------------------------------------------------
 const clearElement = (element) => {
     document.getElementById(element).innerHTML = "";
@@ -210,6 +188,14 @@ const removeChild = (element) => {
 
 // ----------------------------------------------------------------- ADD EVENT LISTENERS --------------------------------------------------------------------------
 document.getElementById("searchButton").addEventListener("click", displayPokemon);
+document.getElementById("searchBar").addEventListener("keyup", function (e) {
+    if(e.keyCode === 13){
+        displayPokemon();
+    }
+});
 document.getElementById("calculateButton").addEventListener("click", () => displayMaxCP(globalPokemon));
-// ONLOAD random pokemon
-document.getElementById("pokemonCard").addEventListener("load",displayRandomPokemon);
+document.getElementById("idInputCP").addEventListener("keyup", function (e) {
+    if(e.keyCode === 13){
+        displayMaxCP(globalPokemon);
+    }
+});

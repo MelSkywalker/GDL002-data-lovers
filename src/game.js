@@ -18,7 +18,7 @@ const getAnswer = () => {
 };
 
 const validateAnswer = (pokemonObject) => {
-    if (getAnswer().toLowerCase() === pokemonObject.name.toLowerCase()) {
+    if (getAnswer().toLowerCase() === pokemonObject.name.toLowerCase() || getAnswer() == pokemonObject.id) {
         document.getElementById("spanAnswer").innerHTML = "¡Es " + pokemonObject.name + "!";
     } else {
         document.getElementById("spanAnswer").innerHTML = "¡No, es " + pokemonObject.name + "!";
@@ -43,3 +43,8 @@ const playAgain = () => {
 displaySilhouette(getPokemonToGuess());
 document.getElementById("answerButton").addEventListener("click", showAnswer);
 document.getElementById("playAgainButton").addEventListener("click",playAgain);
+document.getElementById("answerInput").addEventListener("keyup", function (e) {
+    if(e.keyCode === 13){
+        showAnswer();
+    }
+});
