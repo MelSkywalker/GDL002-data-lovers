@@ -15,54 +15,54 @@
   <div id="root"></div>
 
   <!-- <div id="test"> -->
-    <header>
-      <div class="navigationBar">
-        <div style="font-size:30px;cursor:pointer" class="homeBtnDiv" id="homeBtnId">
-          <img src="images/home-blue-btn.gif" alt="Home button" class="homeBtn">
-          <label for="homeBtn" class="homeBtnTitle">HOME</label>
-        </div>
-        <!-- <span style="font-size:30px;cursor:pointer" class="openbtn" id="openBtn"></span> -->
-        <div class="searchBar">
-          <input type="text" placeholder=" # o Número" class="searchInput" id="searchBar">
-          <!-- <input type="button" value="Buscar" class="searchBtn" id="searchButton"> -->
-          <i class="material-icons md-20 searchBtn" id="searchButton">search</i>
-        </div>
+  <header>
+    <div class="navigationBar">
+      <div style="font-size:30px;cursor:pointer" class="homeBtnDiv" id="homeBtnId">
+        <img src="images/home-blue-btn.gif" alt="Home button" class="homeBtn">
+        <label for="homeBtn" class="homeBtnTitle">HOME</label>
       </div>
-      <div class="containerMenu">
-          <nav class="mainMenu">
-            <ul>
-              <li><a href="info.html">POKEMON</a></li>
-              <li><a href="list.html">LISTAS</a></li>
-              <li><a href="#">ESTADÍSTICAS</a></li>
-              <li><a href="game.html">JUEGO</a></li>
-              <li><a href="about.html">ACERCA DE</a></li>
-          </ul>
-          </nav>
+      <!-- <span style="font-size:30px;cursor:pointer" class="openbtn" id="openBtn"></span> -->
+      <div class="searchBar">
+        <input type="text" placeholder=" # o Número" class="searchInput" id="searchBar">
+        <!-- <input type="button" value="Buscar" class="searchBtn" id="searchButton"> -->
+        <i class="material-icons md-20 searchBtn" id="searchButton">search</i>
       </div>
-    </header>
-  <!-- FIN BARRA DE NAVEGACIÓN -->
-    <div class="StatsDiv">
+    </div>
+    <div class="containerMenu">
+      <nav class="mainMenu">
+        <ul>
+          <li><a href="info.html">POKEMON</a></li>
+          <li><a href="list.html">LISTAS</a></li>
+          <li><a href="#">ESTADÍSTICAS</a></li>
+          <li><a href="game.html">JUEGO</a></li>
+          <li><a href="about.html">ACERCA DE</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="statsContainer">
+    <div class="statsText">
       <h2>Estadísticas: </h2>
       <p>Introduce nombre o número de 2 pokemon para comparar sus stats base</p>
-      <div>
-        <label for="pokemon1Stats" class="pokeStatsLabel">Pokemon 1:</label>
-        <input type="text" id="pokemon1Stats" class="pokeStatsInput">
-        <label for="pokemon2Stats" class="pokeStatsLabel">Pokemon 2:</label>
-        <input type="text" id="pokemon2Stats" class="pokeStatsInput">
-        <input type="button" id="pokemonStatsBtn" value="Go!">
-      </div>
-      <canvas id="chartTest"></canvas>
-      <!-- <div id="chartTest"></div> -->
-      <!-- <canvas id="statsChart" width="400" height="400"></canvas> -->
     </div>
+    <div class="statsChart">
+      <label for="pokemon1Stats" class="pokeStatsLabel">Pokemon 1:</label>
+      <input type="text" id="pokemon1Stats" class="pokeStatsInput">
+      <label for="pokemon2Stats" class="pokeStatsLabel">Pokemon 2:</label>
+      <input type="text" id="pokemon2Stats" class="pokeStatsInput">
+      <input type="button" id="pokemonStatsBtn" value="Go!">
+    </div>
+    <div class="statsCanvas">
+      <canvas id="pokemonChart"></canvas>
+    </div>
+  </div>
 
-    <footer> Creado por Mel y Share :)</footer>
+  <footer> Creado por Mel y Share :)</footer>
 
-  <!-- <script type="text/javascript" src="https://www.gstatic.com(charts/loader.js"></script> -->
   <script src="node_modules/chart.js/dist/Chart.js"></script>
   <script src="./data/pokemon/pokemon.js"></script>
   <script src="data.js"></script>
-  <!-- <script src="main.js"></script> -->
   <script src="charts.js"></script>
 
 

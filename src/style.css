@@ -6,6 +6,9 @@
   box-sizing: border-box;
 }
 body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-image: url("images/pokemon-pattern-background.png");
 }
 footer{
@@ -471,8 +474,9 @@ section ul{
 }
 
 /* CHARTS */
-.statsDiv{
+.statsContainer{
+  margin: 2em 1em 2em 1em;
   display: flex;
   flex-direction: column;
-  justify-content: 
+  justify-content: center;
 }

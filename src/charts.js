@@ -22,7 +22,7 @@ const getStats = (inputIndex) => {
 
 const displayChart = (inputIndex) => {
     getStats(inputIndex).then(foundPokemon => {
-        new Chart(document.getElementById("chartTest"), {
+        new Chart(document.getElementById("pokemonChart"), {
             type: "radar",
             data: {
                 labels: ["Ataque base", "Defensa base", "Estamina base"],
