@@ -1,3 +1,7 @@
+const goHome = () => {
+    window.location = "index.html";
+};
+
 let globalPokemonGame;
 
 const getPokemonToGuess = () => {
@@ -40,7 +44,10 @@ const playAgain = () => {
 
 }
 
+// ------------- AddEventListeners --------------
 displaySilhouette(getPokemonToGuess());
+document.getElementById("homeBtnId").addEventListener("click", goHome);
+
 document.getElementById("answerButton").addEventListener("click", showAnswer);
 document.getElementById("playAgainButton").addEventListener("click",playAgain);
 document.getElementById("answerInput").addEventListener("keyup", function (e) {

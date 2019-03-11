@@ -1,3 +1,7 @@
+const goHome = () => {
+    window.location = "index.html";
+};
+
 let globalPokemon;
 
 const displayPokemon = () => {
@@ -187,6 +191,9 @@ const removeChild = (element) => {
 };
 
 // ----------------------------------------------------------------- ADD EVENT LISTENERS --------------------------------------------------------------------------
+window.onload = displayRandomPokemon;
+document.getElementById("homeBtnId").addEventListener("click", goHome);
+
 document.getElementById("searchButton").addEventListener("click", displayPokemon);
 document.getElementById("searchBar").addEventListener("keyup", function (e) {
     if(e.keyCode === 13){

@@ -1,17 +1,125 @@
-const getStats = (pokemonObject) => {
-    fetch("https://raw.githubusercontent.com/pokemongo-dev-contrib/pokemongo-json-pokedex/master/output/pokemon.json")
-    .then(res => res.json())
-    // .then(data => console.log(data[pokemonObject]))
-    .then (data => data)
-    .then (pokemonObject => console.log(pokemonObject.stats))
-    // .then(stats => console.log(stats.baseAttack))
-    // .then(posts => console.log(posts))
+const goHome = () => {
+    window.location = "index.html";
 };
-getStats(0);
 
-// .dex = .id
+const getPokemon1 = () => {
+    return document.getElementById("pokemon1Stats").value;
+};
+const getPokemon2 = () => {
+    return document.getElementById("pokemon2Stats").value;
+};
 
-// getStats(window.POKEMON.pokemon[0]);
+const getStats = (inputIndex) => {
+    return fetch("https://raw.githubusercontent.com/pokemongo-dev-contrib/pokemongo-json-pokedex/master/output/pokemon.json")
+        .then(res => res.json())
+        .then(data => {
+            console.log(typeof dataLovers.findPokemon(data, getPokemon1()));
+            console.log(dataLovers.findPokemon(data,getPokemon1()));
+            return [dataLovers.findPokemon(data, getPokemon1()),
+                    dataLovers.findPokemon(data, getPokemon2())];
+        })
+};
+
+const displayChart = (inputIndex) => {
+    getStats(inputIndex).then(foundPokemon => {
+        new Chart(document.getElementById("chartTest"), {
+            type: "radar",
+            data: {
+                labels: ["Ataque base", "Defensa base", "Estamina base"],
+                datasets: [{
+                    label: foundPokemon[0].name,
+                    fill: true,
+                    backgroundColor: "rgba(43,136,245,0.2)",
+                    borderColor: "rgba(43, 136, 245, 1)",
+                    borderWidth: 1,
+                    pointBorderColor: "#fff",
+                    pointBackgroundColor: "rgba(43, 136, 245, 1)",
+                    data: [foundPokemon[0].stats.baseAttack, foundPokemon[0].stats.baseDefense, foundPokemon[0].stats.baseStamina]
+                }, {
+                    label: foundPokemon[1].name,
+                    fill: true,
+                    backgroundColor: "rgba(246, 83, 68, 0.2)",
+                    borderColor: "rgba(246, 83, 68, 1)",
+                    borderWidth: 1,
+                    pointBorderColor: "#fff",
+                    pointBackgroundColor: "rgba(246, 83, 68, 1)",
+                    data: [foundPokemon[1].stats.baseAttack, foundPokemon[1].stats.baseDefense, foundPokemon[1].stats.baseStamina]
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "Comparación de estadísticas base"
+                },
+                responsive: true
+            }
+        })
+    })
+    
+}
+
+document.getElementById("homeBtnId").addEventListener("click", goHome);
+document.getElementById("pokemonStatsBtn").addEventListener("click", () => (displayChart()));
+
+// new Chart(document.getElementById("chartTest"), {
+//     type: "radar",
+//         data: {
+//             labels: ["Ataque base", "Defensa base", "Estamina base"],
+//             datasets: [{
+//                 label: "Pokemon 1",
+//                 fill: true,
+//                 backgroundColor: "rgba(179,181,198,0.2)",
+//                 borderColor: "rgba(179, 181, 198, 1)",
+//                 borderWidth: 1,
+//                 pointBorderColor: "#fff",
+//                 pointBackgroundColor: "rgba(179,181,198,1)",
+//                 // data: [pokemonObject.stats.baseAttack, pokemonObject.stats.baseDefense, data.stats.baseStamina]
+//                 data: [1.2, 1.2, 1.5]
+//             },{
+//                 label: "Pokemon 2",
+//                 fill: true,
+//                 backgroundColor: "rgba(255,99,132,0.2)",
+//                 borderColor: "rgba(255,99,132,1)",
+//                 borderWidth: 1,
+//                 pointBorderColor: "#fff",
+//                 pointBackgroundColor: "rgba(255,99,132,1)",
+//                 // data: [pokemonObject.stats.baseAttack, pokemonObject.stats.baseDefense, data.stats.baseStamina]
+//                 data: [1.3, 1.8, 0.9]
+//             }]
+//         },
+//         options: {
+//             title: {
+//                 display: true,
+//                 text: "Comparación de estadístics base"
+//             },
+//             responsive: true
+//         }
+// });
+
+// const displayChart = (pokemonObject) => {
+//     const statsChart = {
+//         type: "radar",
+//         data: {
+//             labels: ["Ataque base", "Defensa base", "Estamina base"],
+//             datasets: [{
+//                 label: "Estadísticas base"
+//                 data: [pokemonObject.stats.baseAttack, pokemonObject.stats.baseDefense, data.stats.baseStamina]
+//                 backgroundColor: [
+//                     "rgba(255, 99, 132, 0.2)",
+//                     "rgba(54, 162, 235, 0.2)"
+//                 ]
+//                 borderColor: [
+//                     "rgba(255, 99, 132, 1)",
+//                     "rgba(54, 162, 235, 1)"
+//                 ]
+//                 borderWidth: 1
+//             }]
+//         },
+//         options: {
+//             responsive: true
+//         }
+//     }
+// }
 
 // const displayChart = (data) => {
 //     const statsChart = {
@@ -27,48 +135,3 @@ getStats(0);
 //       }
 //     };
 //   };
-
-// const fetchParams = {
-//     method: "GET",
-//     mode: "no-cors"
-// };
-// const fetchUrl = "https://raw.githubusercontent.com/pokemongo-dev-contrib/pokemongo-json-pokedex/master/output/pokemon.json";
-// }
-
-// fetch(fetchUrl, fetchParams)
-//     .then(response => {
-//         if(!response.ok) {
-//             throw new TypeError(response.statusText);
-//         }
-//         return response.json();
-//     })
-//     .then(data => {
-//         showChart(data)
-//     })
-//     .catch(err =>{
-//         console.log("Error getting data from API");
-            
-//     })
-// })
-
-// fetch("https://raw.githubusercontent.com/pokemongo-dev-contrib/pokemongo-json-pokedex/master/output/pokemon.json", {
-//     method: "GET",
-//     mode: "cors"
-// })
-//     .then(function(response){
-//         return response.json();
-//     })
-//     .then(data => {
-//         dataLovers.displayChart(data);
-//     })
-
-// fetch('https://raw.githubusercontent.com/pokemongo-dev-contrib/pokemongo-json-pokedex/master/output/pokemon.json', {
-//     method:'GET',
-//     mode: 'no-cors'
-// })
-//   .then(function(response) {
-//     return response.text();
-//   })
-//   .then(function(stats) {
-//     console.log(stats);
-//   });

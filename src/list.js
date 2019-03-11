@@ -1,3 +1,7 @@
+const goHome = () => {
+    window.location = "index.html";
+};
+
 //Seleccionar lista a asignar con el botón
 const selectPokemonList = (whichList, property, element) => {
     if (whichList === "filter") {
@@ -56,6 +60,9 @@ const displayPokemonList = (listToDisplay) => {
 };
 
 // -------------- ADD EVENT LISTENERS ----------
+window.onload = selectPokemonList("order","num","asc");
+document.getElementById("homeBtnId").addEventListener("click", goHome);
+
 document.getElementById("typeNormal").addEventListener("click", () => selectPokemonList("filter","type","Normal"));
 document.getElementById("typeFighting").addEventListener("click", () => selectPokemonList("filter","type","Fighting"));
 document.getElementById("typeFlying").addEventListener("click", () => selectPokemonList("filter","type","Flying"));

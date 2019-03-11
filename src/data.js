@@ -1,7 +1,7 @@
 // -------------------------------------------- SEARCH, FILTER, ORDER & CALCULATE MAX CP FUNCTIONS -------------------------------------
 //Encontrar Pokémon Object por nombre o número
 const findPokemon = (data, getPokemon) => {
-  return data.find(pokemon => pokemon.name.toLowerCase() == getPokemon.toLowerCase() || pokemon.id == getPokemon);
+  return data.find(pokemon => pokemon.name.toLowerCase() == getPokemon.toLowerCase() || pokemon.id == getPokemon || pokemon.dex == getPokemon);
 };
 
 //Función para filtrar por debilidad o tipo
