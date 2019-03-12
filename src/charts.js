@@ -13,8 +13,8 @@ const getStats = (inputIndex) => {
     return fetch("https://raw.githubusercontent.com/pokemongo-dev-contrib/pokemongo-json-pokedex/master/output/pokemon.json")
         .then(res => res.json())
         .then(data => {
-            console.log(typeof dataLovers.findPokemon(data, getPokemon1()));
-            console.log(dataLovers.findPokemon(data,getPokemon1()));
+            // console.log(typeof dataLovers.findPokemon(data, getPokemon1()));
+            // console.log(dataLovers.findPokemon(data,getPokemon1()));
             return [dataLovers.findPokemon(data, getPokemon1()),
                     dataLovers.findPokemon(data, getPokemon2())];
         })
