@@ -501,6 +501,7 @@ section ul{
   width: 10%;
   border-radius: 6px;
   align-self: center;
+  background-color: white;
   border: 2px solid #223d7f;
 }
 #statsChart{
