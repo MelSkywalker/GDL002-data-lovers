@@ -29,7 +29,7 @@ const displayPokemonList = (listToDisplay) => {
         const pokemonDivText = document.createElement("div");
         // const pokemonFigure = document.createElement("figure");
         const pokemonImg = document.createElement("img");
-        const pokemonLink = document.createElement("a");
+        // const pokemonLink = document.createElement("a");
         pokemonDiv.className = "pokemonElement";
         // pokemonDiv.setAttribute("class","boxWrapper2");
         pokemonImg.setAttribute("class","listPokeImg");
@@ -51,6 +51,7 @@ const displayPokemonList = (listToDisplay) => {
         pokemonList.appendChild(pokemonDiv);
 
         pokemonDiv.addEventListener("click",function(){
+            window.location = "info.html";
             clearValue("idInputCP");
             clearElement("divCPcalc");
             displayScreen("details");
