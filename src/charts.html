@@ -23,9 +23,9 @@
       </div>
       <!-- <span style="font-size:30px;cursor:pointer" class="openbtn" id="openBtn"></span> -->
       <div class="searchBar">
-        <input type="text" placeholder=" # o Número" class="searchInput" id="searchBar">
+        <!-- <input type="text" placeholder=" # o Número" class="searchInput" id="searchBar"> -->
         <!-- <input type="button" value="Buscar" class="searchBtn" id="searchButton"> -->
-        <i class="material-icons md-20 searchBtn" id="searchButton">search</i>
+        <!-- <i class="material-icons md-20 searchBtn" id="searchButton">search</i> -->
       </div>
     </div>
     <div class="containerMenu">
@@ -40,22 +40,23 @@
       </nav>
     </div>
   </header>
-
-  <div class="statsContainer">
-    <div class="statsText">
-      <h2>Estadísticas: </h2>
-      <p>Introduce nombre o número de 2 pokemon para comparar sus stats base</p>
-    </div>
-    <div class="statsChart">
-      <label for="pokemon1Stats" class="pokeStatsLabel">Pokemon 1:</label>
-      <input type="text" id="pokemon1Stats" class="pokeStatsInput">
-      <label for="pokemon2Stats" class="pokeStatsLabel">Pokemon 2:</label>
-      <input type="text" id="pokemon2Stats" class="pokeStatsInput">
+  <!-- FIN BARRA DE NAVEGACIÓN -->
+  <div class="statsDiv">
+    <h2>Estadísticas: </h2>
+    <p>Introduce nombre o número de 2 pokemon para comparar sus stats base:</p>
+      <div class="getPokemonStatsDiv">
+        <div>
+          <label for="pokemon1Stats" class="pokeStatsLabel">Pokemon 1:</label>
+          <input type="text" id="pokemon1Stats" class="pokeStatsInput">
+        </div>
+        <div>
+          <label for="pokemon2Stats" class="pokeStatsLabel">Pokemon 2:</label>
+          <input type="text" id="pokemon2Stats" class="pokeStatsInput">
+        </div>
+      </div>
       <input type="button" id="pokemonStatsBtn" value="Go!">
-    </div>
-    <div class="statsCanvas">
-      <canvas id="pokemonChart"></canvas>
-    </div>
+      <div id="canvasDiv"></div>
+      <!-- <canvas id="statsChart"></canvas> -->
   </div>
 
   <footer> Creado por Mel y Share :)</footer>
