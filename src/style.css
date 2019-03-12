@@ -242,7 +242,7 @@ h2{
 }
 /* LIST MENU */
 /*SIDE BAR*/
-.sideNav{
+/* .sideNav{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -307,8 +307,8 @@ h2{
 }
 .mainElement:target .dropdown1{
   max-height: 10em;
-}
-/* .sideNav{
+} */
+.sideNav{
   width: 15%;
   display: block;
   padding: 6px 8px 6px 0px;
@@ -321,7 +321,7 @@ h2{
 .sideNav ul li i{
   display: block;
   position: absolute;
-  font-size: 36px;
+  font-size: 28px;
   height: 1em;
   top: 0;
   bottom: 0;
@@ -335,14 +335,14 @@ h2{
 .sideNav ul li{
   padding: 5px;
   position: relative;
-  width: 170px;
-  background-color: #1485cc;
+  width: 190px;
+  background-color: #223d7f;
   border-right: 2px solid white;
   border-top: 1px solid white;
   font-size: 16px;
 }
 .sideNav ul li:hover{
-  background-color: #b21212;
+  background-color: rgb(150, 150, 150);
 }
 .sideNav ul ul{
   transition: all 0.3s;
@@ -360,7 +360,7 @@ h2{
 .sideNav ul li a{
   color: white;
   text-decoration: none;
-} */
+}
 /* MAIN MENU */
 .containerMenu{
   width: 100%;
@@ -469,10 +469,39 @@ section ul{
   margin: 1em 2em 2em 3em;
   text-align: left;
 }
-
 /* CHARTS */
 .statsDiv{
+  margin: 2em;
   display: flex;
   flex-direction: column;
-  justify-content: 
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.statsDiv h2{
+  margin-bottom: .5em;
+}
+.statsDiv p{
+  margin-bottom: 1em;
+}
+.getPokemonStatsDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.pokeStatsInput{
+  border-radius: 6px;
+  padding-left: .5em;
+  width: 50%;
+}
+#pokemonStatsBtn{
+  margin: 1em 0 1em 0;
+  width: 10%;
+  border-radius: 6px;
+  align-self: center;
+  border: 2px solid #223d7f;
+}
+#statsChart{
+  padding: .5em;
+  margin: 0;
+  background-image: radial-gradient(rgba(255,255,255, 1), rgba(255,255,255, 0));
 }

@@ -1,3 +1,4 @@
+
 const goHome = () => {
     window.location = "index.html";
 };
@@ -51,6 +52,7 @@ const displayPokemonList = (listToDisplay) => {
         pokemonList.appendChild(pokemonDiv);
 
         pokemonDiv.addEventListener("click",function(){
+            window.location = "info.html";
             clearValue("idInputCP");
             clearElement("divCPcalc");
             displayScreen("details");

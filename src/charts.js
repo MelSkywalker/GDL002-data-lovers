@@ -20,9 +20,23 @@ const getStats = (inputIndex) => {
         })
 };
 
+// const createCanvas = () => {
+//     const canvasDiv = document.getElementById("canvasDiv");
+//     const canvasCreated = document.createElement("canvas");
+//     canvasCreated.setAttribute("id", "statsChart");
+//     canvasDiv.appendChild(canvasCreated);
+// }
+
 const displayChart = (inputIndex) => {
+    const canvasDiv = document.getElementById("canvasDiv");
+    const canvasCreated = document.createElement("canvas");
+    canvasCreated.setAttribute("id", "statsChart");
+    canvasDiv.appendChild(canvasCreated);
+
     getStats(inputIndex).then(foundPokemon => {
-        new Chart(document.getElementById("chartTest"), {
+        Chart.defaults.global.defaultFontSize = 14;
+        Chart.defaults.global.defaultFontColor= "#3f3f3f";
+        new Chart(document.getElementById("statsChart"), {
             type: "radar",
             data: {
                 labels: ["Ataque base", "Defensa base", "Estamina base"],
@@ -31,18 +45,24 @@ const displayChart = (inputIndex) => {
                     fill: true,
                     backgroundColor: "rgba(43,136,245,0.2)",
                     borderColor: "rgba(43, 136, 245, 1)",
-                    borderWidth: 1,
+                    borderWidth: 2,
                     pointBorderColor: "#fff",
                     pointBackgroundColor: "rgba(43, 136, 245, 1)",
+                    pointStyle: "circle",
+                    pointRadius: 5,
+                    pointHoverRadius: 8,
                     data: [foundPokemon[0].stats.baseAttack, foundPokemon[0].stats.baseDefense, foundPokemon[0].stats.baseStamina]
                 }, {
                     label: foundPokemon[1].name,
                     fill: true,
                     backgroundColor: "rgba(246, 83, 68, 0.2)",
                     borderColor: "rgba(246, 83, 68, 1)",
-                    borderWidth: 1,
+                    borderWidth: 2,
                     pointBorderColor: "#fff",
                     pointBackgroundColor: "rgba(246, 83, 68, 1)",
+                    pointStyle: "circle",
+                    pointRadius: 5,
+                    pointHoverRadius: 8,
                     data: [foundPokemon[1].stats.baseAttack, foundPokemon[1].stats.baseDefense, foundPokemon[1].stats.baseStamina]
                 }]
             },
@@ -51,7 +71,8 @@ const displayChart = (inputIndex) => {
                     display: true,
                     text: "Comparación de estadísticas base"
                 },
-                responsive: true
+                responsive: true,
+                aspectRatio: 2
             }
         })
     })
@@ -60,78 +81,3 @@ const displayChart = (inputIndex) => {
 
 document.getElementById("homeBtnId").addEventListener("click", goHome);
 document.getElementById("pokemonStatsBtn").addEventListener("click", () => (displayChart()));
-
-// new Chart(document.getElementById("chartTest"), {
-//     type: "radar",
-//         data: {
-//             labels: ["Ataque base", "Defensa base", "Estamina base"],
-//             datasets: [{
-//                 label: "Pokemon 1",
-//                 fill: true,
-//                 backgroundColor: "rgba(179,181,198,0.2)",
-//                 borderColor: "rgba(179, 181, 198, 1)",
-//                 borderWidth: 1,
-//                 pointBorderColor: "#fff",
-//                 pointBackgroundColor: "rgba(179,181,198,1)",
-//                 // data: [pokemonObject.stats.baseAttack, pokemonObject.stats.baseDefense, data.stats.baseStamina]
-//                 data: [1.2, 1.2, 1.5]
-//             },{
-//                 label: "Pokemon 2",
-//                 fill: true,
-//                 backgroundColor: "rgba(255,99,132,0.2)",
-//                 borderColor: "rgba(255,99,132,1)",
-//                 borderWidth: 1,
-//                 pointBorderColor: "#fff",
-//                 pointBackgroundColor: "rgba(255,99,132,1)",
-//                 // data: [pokemonObject.stats.baseAttack, pokemonObject.stats.baseDefense, data.stats.baseStamina]
-//                 data: [1.3, 1.8, 0.9]
-//             }]
-//         },
-//         options: {
-//             title: {
-//                 display: true,
-//                 text: "Comparación de estadístics base"
-//             },
-//             responsive: true
-//         }
-// });
-
-// const displayChart = (pokemonObject) => {
-//     const statsChart = {
-//         type: "radar",
-//         data: {
-//             labels: ["Ataque base", "Defensa base", "Estamina base"],
-//             datasets: [{
-//                 label: "Estadísticas base"
-//                 data: [pokemonObject.stats.baseAttack, pokemonObject.stats.baseDefense, data.stats.baseStamina]
-//                 backgroundColor: [
-//                     "rgba(255, 99, 132, 0.2)",
-//                     "rgba(54, 162, 235, 0.2)"
-//                 ]
-//                 borderColor: [
-//                     "rgba(255, 99, 132, 1)",
-//                     "rgba(54, 162, 235, 1)"
-//                 ]
-//                 borderWidth: 1
-//             }]
-//         },
-//         options: {
-//             responsive: true
-//         }
-//     }
-// }
-
-// const displayChart = (data) => {
-//     const statsChart = {
-//       type: "radar",
-//       data: {
-//         labels: ["Ataque base", "Defensa base", "Estamina base"],
-//         datasets: [{
-//             data: [data.stats.baseAttack, data.stats.baseDefense, data.stats.baseStamina]
-//         }]
-//       },
-//       options: {
-//         responsive: true
-//       }
-//     };
-//   };
