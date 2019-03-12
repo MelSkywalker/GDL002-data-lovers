@@ -18,6 +18,11 @@ const displayRandomPokemon = () => {
     return;
 }
 
+//Seleccionar Pokémon al azar
+// const pickPokemon = (data) => {
+//     return data[Math.floor(Math.random()*151)];
+// };
+
 //Recibir el nombre del pokemon a buscar
 const getPokemon = () => {    
     return document.getElementById("searchBar").value;
@@ -161,7 +166,7 @@ const displayMaxCP = (pokemonObject) => {
     }
 };
 
-//------------------ CLEAR FUNCTIONS --------------
+//------------------------------------------------------------------ CLEAR FUNCTIONS ---------------------------------------------------------------------
 const clearElement = (element) => {
     document.getElementById(element).innerHTML = "";
 };
