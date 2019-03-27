@@ -12,7 +12,7 @@
 
 </head>
 
-<body>
+<body id="body">
   <div id="root"></div>
 
   <header>
@@ -34,95 +34,96 @@
           <li><a href="charts.html">ESTADÍSTICAS</a></li>
           <li><a href="game.html">JUEGO</a></li>
           <li><a href="about.html">ACERCA DE</a></li>
-      </ul>
+        </ul>
       </nav>
     </div>
   </header>
 
 
   <!-- ------------------------ INFO -------------------------------------- -->
-
-  <div id="pokemonCard" class="container pokemonCardDisp">
-    <div class="subContainer1">
-      <div class="pokemonInfo box1 cardImg" id="pokeImg">
-      </div>
-      <div class="subContainer1-1">
-        <div class="pokemonInfo box2">
-          <span class="pokemonNumber" id="pokeNum"></span>
-          <span class="pokemonName" id="pokeName"></span>
+  <div class="megaContainer">
+    <div id="pokemonCard" class="container pokemonCardDisp">
+      <div class="subContainer1">
+        <div class="pokemonInfo box1 cardImg" id="pokeImg">
         </div>
-
-        <div class="pokemonInfo box3" id="divType">
-          <label for="pokemonTypeSpan" class="infoTitle">Tipo: </label>
-          <div id="divTypeImg"></div>
-        </div>
-
-        <div class="pokemonInfo box4">
-          <div>
-            <label for="pokemonPreEvolutionSpan" class="infoTitle">Pre-evoluciones: </label>
-            <span class="pokemonPreEvolutions" id="pokePreEvolution" name="pokemonPreEvolutionSpan"></span>
+        <div class="subContainer1-1">
+          <div class="pokemonInfo box2">
+            <span class="pokemonNumber" id="pokeNum"></span>
+            <span class="pokemonName" id="pokeName"></span>
           </div>
-          <div>
-            <label for="pokemonEvolutionSpan" class="infoTitle">Evoluciones: </label>
-            <span class="pokemonEvolutions" id="pokeEvolution" name="pokemonEvolutionSpan"></span>
+
+          <div class="pokemonInfo box3" id="divType">
+            <label for="pokemonTypeSpan" class="infoTitle">Tipo: </label>
+            <div id="divTypeImg"></div>
+          </div>
+
+          <div class="pokemonInfo box4">
+            <div>
+              <label for="pokemonPreEvolutionSpan" class="infoTitle">Pre-evoluciones: </label>
+              <span class="pokemonPreEvolutions" id="pokePreEvolution" name="pokemonPreEvolutionSpan"></span>
+            </div>
+            <div>
+              <label for="pokemonEvolutionSpan" class="infoTitle">Evoluciones: </label>
+              <span class="pokemonEvolutions" id="pokeEvolution" name="pokemonEvolutionSpan"></span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="subContainer2">
-      <div class="pokemonInfo box5">
-        <div class="boxComp">
-          <label for="pokeHeightSpan" class="infoTitle">Altura: </label>
-          <span class="pokemonHeight" id="pokeHeight" name="pokemonHeight"></span>
+      <div class="subContainer2">
+        <div class="pokemonInfo box5">
+          <div class="boxComp">
+            <label for="pokeHeightSpan" class="infoTitle">Altura: </label>
+            <span class="pokemonHeight" id="pokeHeight" name="pokemonHeight"></span>
+          </div>
+          <div class="boxComp">
+            <label for="pokeWeightSpan" class="infoTitle">Peso: </label>
+            <span class="pokemonWeight" id="pokeWeight" name="pokemonWeightSpan"></span>
+          </div>
+          <div class="boxComp">
+            <label for="pokeDescriptionSpan" class="infoTitle">Descripción: </label>
+            <span class="pokemonDescription" id="pokeDescription" name="pokemonDescriptionSpan"></span>
+          </div>
         </div>
-        <div class="boxComp">
-          <label for="pokeWeightSpan" class="infoTitle">Peso: </label>
-          <span class="pokemonWeight" id="pokeWeight" name="pokemonWeightSpan"></span>
+
+        <div class="pokemonInfo box6 boxComp" id="divWeaknesses">
+          <label for="pokemonWeaknessesSpan" class="infoTitle">Debilidades: </label>
+          <div id="divWeaknessesImg"></div>
         </div>
-        <div class="boxComp">
-          <label for="pokeDescriptionSpan" class="infoTitle">Descripción: </label>
-          <span class="pokemonDescription" id="pokeDescription" name="pokemonDescriptionSpan"></span>
+
+        <div class="pokemonInfo box7 boxComp" id="box7">
+          <h2>Información de juego: </h2>
+          <div class="pokemonGameInfo boxComp">
+            <label for="frequencySpawnSpan" class="infoTitle">Frecuencia de aparición: </label>
+            <span id="frequencySpawn" name="frequencySpawnSpan"></span>
+          </div>
+
+          <div class="pokemonGameInfo boxComp">
+            <label for="timeSpawnSpan" class="infoTitle">Tiempo de aparición: </label>
+            <span id="timeSpawn" name="timeSpawnSpan"></span>
+          </div>
+
+          <div class="pokemonGameInfo boxComp">
+            <label for="kmEggSpan" class="infoTitle">Distancia para eclosión de huevo: </label>
+            <span id="kmEgg" name="kmEggSpan"></span>
+          </div>
+
+          <div class="pokemonGameInfo boxComp">
+            <label for="candiesNumberSpan" class="infoTitle">Número de dulces para evolucionar: </label>
+            <span id="candies" name="candiesSpan"></span>
+          </div>
         </div>
       </div>
-
-      <div class="pokemonInfo box6 boxComp" id="divWeaknesses">
-        <label for="pokemonWeaknessesSpan" class="infoTitle">Debilidades: </label>
-        <div id="divWeaknessesImg"></div>
-      </div>
-
-      <div class="pokemonInfo box7 boxComp" id="box7">
-        <h2>Información de juego: </h2>
-        <div class="pokemonGameInfo boxComp">
-          <label for="frequencySpawnSpan" class="infoTitle">Frecuencia de aparición: </label>
-          <span id="frequencySpawn" name="frequencySpawnSpan"></span>
-        </div>
-
-        <div class="pokemonGameInfo boxComp">
-          <label for="timeSpawnSpan" class="infoTitle">Tiempo de aparición: </label>
-          <span id="timeSpawn" name="timeSpawnSpan"></span>
-        </div>
-
-        <div class="pokemonGameInfo boxComp">
-          <label for="kmEggSpan" class="infoTitle">Distancia para eclosión de huevo: </label>
-          <span id="kmEgg" name="kmEggSpan"></span>
-        </div>
-
-        <div class="pokemonGameInfo boxComp">
-          <label for="candiesNumberSpan" class="infoTitle">Número de dulces para evolucionar: </label>
-          <span id="candies" name="candiesSpan"></span>
-        </div>
-      </div>
-    </div>
       <div class="pokemonInfo box8 boxComp" id="divMaxCP">
         <label for="inputCP" class="infoTitle">Ingresa los PC de tu Pokémon: </label>
         <input type="text" class="searchInput" id="idInputCP" name="inputCP" onfocus="this.value=''">
         <input type="button" value="Calcular" id="calculateButton">
         <!-- Resultado -->
         <label id="divCPcalc"></label>
+      </div>
     </div>
   </div>
 
-<!-- ------------------------ LISTAS -------------------------------------- -->
+  <!-- ------------------------ LISTAS -------------------------------------- -->
 
   <div class="listPageContainer listDisp" id="listsPageDiv">
     <div class="listContainer">
@@ -145,12 +146,13 @@
               <li id="typeElectric"><a href="#submType">Electric</a></li>
               <li id="typePsychic"><a href="#submType">Psychic</a></li>
               <li id="typeIce"><a href="#submType">Ice</a></li>
-              <li id="typeDragon"><a href="#"submType>Dragon</a></li>
+              <li id="typeDragon"><a href="#" submType>Dragon</a></li>
               <li id="typeFairy"><a href="#submType">Fairy</a></li>
               <li id="typeDark"><a href="#submType">Dark</a></li>
             </ul>
           </li>
-          <li class="mainElement" id="weaknessesLi"><a href="#weaknessesLi"><i class="material-icons">expand_more</i>DÉBILES A</a>
+          <li class="mainElement" id="weaknessesLi"><a href="#weaknessesLi"><i
+                class="material-icons">expand_more</i>DÉBILES A</a>
             <ul class="dropdown1">
               <li id="weakNormal"><a href="#submType">Normal</a></li>
               <li id="weakFighting"><a href="#submType">Fighting</a></li>
@@ -171,7 +173,8 @@
               <li id="weakDark"><a href="#submType">Dark</a></li>
             </ul>
           </li>
-          <li class="mainElement" id="fullListLi"><a href="#fullListLi"><i class="material-icons">expand_more</i>LISTA COMPLETA</a>
+          <li class="mainElement" id="fullListLi"><a href="#fullListLi"><i class="material-icons">expand_more</i>LISTA
+              COMPLETA</a>
             <ul class="dropdown1">
               <li><a href="#">Por número</a>
                 <ul class="dropdown2">

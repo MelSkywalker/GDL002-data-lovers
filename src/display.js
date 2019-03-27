@@ -42,7 +42,8 @@ const displayScreen = (screen) => {
         displayListMenu.style.display = "block";
         return;
     }
-}
+};
+
 
 let globalPokemon;
 
@@ -66,13 +67,13 @@ const displayRandomPokemon = () => {
 // };
 
 //Recibir el nombre del pokemon a buscar
-const getPokemon = () => {    
+const getPokemon = () => {
     return document.getElementById("searchBar").value;
 };
 
 //Validar si el texto escrito coincide con un Pokémon
 const validatePokemon = () => {
-    const wantedPokemon = dataLovers.findPokemon(window.POKEMON.pokemon, getPokemon());    
+    const wantedPokemon = dataLovers.findPokemon(window.POKEMON.pokemon, getPokemon());
     if (wantedPokemon == undefined) {
         return fail();
     }
@@ -157,11 +158,11 @@ const findPokemonImg = (pokemonObject) => {
     pokemonImg.setAttribute("class","pokemonPicture");
     pokemonImg.src = pokemonObject.img;
     pokemonFigureImg.appendChild(pokemonImg);
-    divPokemonImg.appendChild(pokemonFigureImg);    
+    divPokemonImg.appendChild(pokemonFigureImg);
 };
 
 // ------------------------------------DISPLAY FUNCTIONS ---------------------------------------------
-const displayInfo = (pokemonObject) => {    
+const displayInfo = (pokemonObject) => {
     globalPokemon = pokemonObject;
     document.getElementById("pokeName").innerHTML = pokemonObject.name;
     document.getElementById("pokeNum").innerHTML = pokemonObject.num;
@@ -179,7 +180,7 @@ const displayInfo = (pokemonObject) => {
     document.getElementById("kmEgg").innerHTML = pokemonObject.egg;
     document.getElementById("candies").innerHTML = pokemonObject.candy_count;
     // document.getElementById("statsChart").innerHTML = displayChart();
-    
+
     clearValue("searchBar");
     if (pokemonObject.multipliers == null) {
         disableDOMElement("idInputCP");
@@ -240,7 +241,6 @@ const removeChild = (element) => {
 const selectPokemonList = (whichList, property, element) => {
     if (whichList === "filter") {
         displayPokemonList(dataLovers.filterPokemon(window.POKEMON.pokemon, property, element));
-        
         // displayScreen("list");
         return;
     } else if (whichList == "order") {
@@ -268,7 +268,6 @@ const displayPokemonList = (listToDisplay) => {
         // pokemonDiv.setAttribute("class","boxWrapper2");
         pokemonImg.setAttribute("class","listPokeImg");
         pokemonLabel.setAttribute("class", "listLabels");
-        
         pokemonImg.src = listToDisplay[i].img;
         // pokemonFigure.appendChild(pokemonImg);
         pokemonDiv.appendChild(pokemonImg);
@@ -279,8 +278,9 @@ const displayPokemonList = (listToDisplay) => {
         pokemonDivText.appendChild(pokemonLabel);
         pokemonDiv.appendChild(pokemonDivText);
         pokemonList.appendChild(pokemonDiv);
+        // pokemonLink.href = "#pokemonCard";
+        pokemonLink.href = "#body";
 
-        pokemonLink.href = "#pokemonCard";
         pokemonDiv.appendChild(pokemonLink);
         pokemonList.appendChild(pokemonDiv);
 
@@ -290,7 +290,8 @@ const displayPokemonList = (listToDisplay) => {
             clearElement("divCPcalc");
             displayScreen("details");
             displayInfo(listToDisplay[i]);
-            window.location.href = "#pokemonCard";
+            window.location.href = "#body";
+            // window.location.href = "#pokemonCard";
         });
     }
 };
