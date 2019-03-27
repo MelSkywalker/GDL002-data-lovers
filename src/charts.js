@@ -80,4 +80,6 @@ const displayChart = (inputIndex) => {
 }
 
 document.getElementById("homeBtnId").addEventListener("click", goHome);
+document.getElementById("infoPageMenu").addEventListener("click", () => window.location.href = "display.html#listsPageDiv");
+document.getElementById("listPageMenu").addEventListener("click", () => window.location.href = "display.html#pokemonCard");
 document.getElementById("pokemonStatsBtn").addEventListener("click", () => (displayChart()));

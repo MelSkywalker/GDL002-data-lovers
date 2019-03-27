@@ -4,34 +4,42 @@ const goHome = () => {
 
 // ----------------- SCREENS ------------------
 const displayScreen = (screen) => {
-    if (screen === "info1"){
+    if (screen === "info1") {
+        displayRandomPokemon();
         const displayInfo = document.getElementById("pokemonCard");
-        const displayList = document.getElementById("container2");
+        const displayList = document.getElementById("listsPageDiv");
+        const displayListMenu = document.getElementById("submType");
         displayInfo.style.display = "block";
         displayList.style.display = "none";
-        window.onload = displayRandomPokemon;
+        displayListMenu.style.display = "none";
         return;
     }
-    if (screen === "list1") => {
+    if (screen === "list1") {
+        selectPokemonList("order","num","asc");
         const displayInfo = document.getElementById("pokemonCard");
-        const displayList = document.getElementById("container2");
+        const displayList = document.getElementById("listsPageDiv");
+        const displayListMenu = document.getElementById("submType");
         displayInfo.style.display = "none";
         displayList.style.display = "block";
-        window.onload = selectPokemonList("order","num","asc");;
+        displayListMenu.style.display = "block";
         return;
     }
-    if (screen === "info") => {
+    if (screen === "info") {
         const displayInfo = document.getElementById("pokemonCard");
-        const displayList = document.getElementById("container2");
+        const displayList = document.getElementById("listsPageDiv");
+        const displayListMenu = document.getElementById("submType");
         displayInfo.style.display = "block";
-        displayList.style.display = "none";
+        displayList.style.display = "block";
+        displayListMenu.style.display = "block";
         return;
     }
-    if (screen === "list") => {
+    if (screen === "list") {
         const displayInfo = document.getElementById("pokemonCard");
-        const displayList = document.getElementById("container2");
-        displayInfo.style.display = "none";
+        const displayList = document.getElementById("listsPageDiv");
+        const displayListMenu = document.getElementById("submType");
+        displayInfo.style.display = "block";
         displayList.style.display = "block";
+        displayListMenu.style.display = "block";
         return;
     }
 }
@@ -50,7 +58,7 @@ const displayRandomPokemon = () => {
     clearElement("divCPcalc");
     clearValue("idInputCP");
     return;
-}
+};
 
 //Seleccionar Pokémon al azar
 // const pickPokemon = (data) => {
@@ -97,6 +105,8 @@ const findTypes = (pokemonObject) => {
 
         divEachTypeImg.addEventListener("click", function(){
             selectPokemonList("filter","type", pokemonObject.type[i]);
+            displayScreen("list");
+            window.location.href = "#pokemonList";
         });
     }
 };
@@ -121,6 +131,8 @@ const findWeaknesses = (pokemonObject) => {
 
         divEachWeaknessesImg.addEventListener("click", function(){
             selectPokemonList("filter","type", pokemonObject.weaknesses[i]);
+            displayScreen("list");
+            window.location.href = "#pokemonList";
         });
     }
 };
@@ -268,23 +280,35 @@ const displayPokemonList = (listToDisplay) => {
         pokemonDiv.appendChild(pokemonDivText);
         pokemonList.appendChild(pokemonDiv);
 
-        pokemonLink.href = document.getElementById("pokemonCard");
+        pokemonLink.href = "#pokemonCard";
         pokemonDiv.appendChild(pokemonLink);
         pokemonList.appendChild(pokemonDiv);
 
         pokemonDiv.addEventListener("click",function(){
-            window.location = "info.html";
+            displayScreen("info");
             clearValue("idInputCP");
             clearElement("divCPcalc");
             displayScreen("details");
             displayInfo(listToDisplay[i]);
+            window.location.href = "#pokemonCard";
         });
     }
 };
 
+const onloadPage = () => {
+    displayRandomPokemon();
+    selectPokemonList("order","num","asc");
+};
+
 // ----------------------------------------------------------------- ADD EVENT LISTENERS --------------------------------------------------------------------------
 // window.onload = displayRandomPokemon;
+window.onload = onloadPage();
+
 document.getElementById("homeBtnId").addEventListener("click", goHome);
+document.getElementById("infoPageMenu").addEventListener("click", () => displayScreen("info1"));
+document.getElementById("listPageMenu").addEventListener("click", () => displayScreen("list1"));
+
+
 
 document.getElementById("searchButton").addEventListener("click", displayPokemon);
 document.getElementById("searchBar").addEventListener("keyup", function (e) {

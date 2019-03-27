@@ -402,6 +402,7 @@ h2{
     flex: 1 1 0;
   }
 }
+
 /* GAME */
 #pokemonCardGame{
   margin-left: 3%;
@@ -503,9 +504,23 @@ section ul{
   align-self: center;
   background-color: white;
   border: 2px solid #223d7f;
+  transition: 200ms;
+}
+#pokemonStatsBtn:hover{
+  background-color: #223d7f;
+  color: white;
 }
 #statsChart{
   padding: .5em;
   margin: 0;
   background-image: radial-gradient(rgba(255,255,255, 1), rgba(255,255,255, 0));
+}
+.pokemonCardDisp{
+  display: none;
+}
+.listDisp{
+  display: none;
+}
+.submType{
+  display:none;
 }

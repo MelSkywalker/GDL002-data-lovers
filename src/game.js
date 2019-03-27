@@ -31,22 +31,30 @@ const validateAnswer = (pokemonObject) => {
 
 const showPokemonAnswer = (pokemonObject) => {
     document.getElementById("pokemonPictureGame").classList.remove("pokemonSilhouette");
-}
+};
 
 const showAnswer = () => {
     validateAnswer(globalPokemonGame);
     showPokemonAnswer(globalPokemonGame);
-}
+};
 
 const playAgain = () => {
     displaySilhouette(getPokemonToGuess());
     document.getElementById("answerInput").value = "";
 
-}
+};
 
 // ------------- AddEventListeners --------------
 displaySilhouette(getPokemonToGuess());
 document.getElementById("homeBtnId").addEventListener("click", goHome);
+document.getElementById("infoPageMenu").addEventListener("click", () => {
+    document.getElementsByClassName("pokemonCardDisp").style.display = "block";
+});
+document.getElementById("listPageMenu").addEventListener("click", () => {
+    document.getElementsByClassName("listDisp").style.display = "block";
+    document.getElementsByClassName("submType").style.display = "block";
+});
+// document.getElementById("listPageMenu").addEventListener("click", () => displayScreen("list1"));
 
 document.getElementById("answerButton").addEventListener("click", showAnswer);
 document.getElementById("playAgainButton").addEventListener("click",playAgain);

@@ -31,8 +31,10 @@
     <div class="containerMenu">
       <nav class="mainMenu">
         <ul>
-          <li><a href="info.html">POKEMON</a></li>
-          <li><a href="list.html">LISTAS</a></li>
+          <li><a href="#navBar" id="infoPageMenu">POKEMON</a></li>
+          <li><a href="#pokemonList" id="listPageMenu">LISTAS</a></li>
+          <!-- <li><a href="info.html">POKEMON</a></li>
+          <li><a href="list.html">LISTAS</a></li> -->
           <li><a href="#">ESTADÍSTICAS</a></li>
           <li><a href="game.html">JUEGO</a></li>
           <li><a href="about.html">ACERCA DE</a></li>
@@ -44,24 +46,24 @@
   <div class="statsDiv">
     <h2>Estadísticas: </h2>
     <p>Introduce nombre o número de 2 pokemon para comparar sus stats base:</p>
-      <div class="getPokemonStatsDiv">
-        <div>
-          <label for="pokemon1Stats" class="pokeStatsLabel">Pokemon 1:</label>
-          <input type="text" id="pokemon1Stats" class="pokeStatsInput">
-        </div>
-        <div>
-          <label for="pokemon2Stats" class="pokeStatsLabel">Pokemon 2:</label>
-          <input type="text" id="pokemon2Stats" class="pokeStatsInput">
-        </div>
+    <div class="getPokemonStatsDiv">
+      <div>
+        <label for="pokemon1Stats" class="pokeStatsLabel">Pokemon 1:</label>
+        <input type="text" id="pokemon1Stats" class="pokeStatsInput">
       </div>
-      <input type="button" id="pokemonStatsBtn" value="Go!">
-      <div id="canvasDiv"></div>
-      <!-- <canvas id="statsChart"></canvas> -->
+      <div>
+        <label for="pokemon2Stats" class="pokeStatsLabel">Pokemon 2:</label>
+        <input type="text" id="pokemon2Stats" class="pokeStatsInput">
+      </div>
+    </div>
+    <input type="button" id="pokemonStatsBtn" value="Go!">
+    <div id="canvasDiv"></div>
+    <!-- <canvas id="statsChart"></canvas> -->
   </div>
 
   <footer> Creado por Mel y Share :)</footer>
 
-  <script src="node_modules/chart.js/dist/Chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
   <script src="./data/pokemon/pokemon.js"></script>
   <script src="data.js"></script>
   <script src="charts.js"></script>

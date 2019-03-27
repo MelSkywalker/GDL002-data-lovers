@@ -188,6 +188,8 @@ const removeChild = (element) => {
 // ----------------------------------------------------------------- ADD EVENT LISTENERS --------------------------------------------------------------------------
 window.onload = displayRandomPokemon;
 document.getElementById("homeBtnId").addEventListener("click", goHome);
+document.getElementById("infoPageMenu").addEventListener("click", () => displayScreen("info1"));
+document.getElementById("listPageMenu").addEventListener("click", () => displayScreen("list1"));
 
 document.getElementById("searchButton").addEventListener("click", displayPokemon);
 document.getElementById("searchBar").addEventListener("keyup", function (e) {
