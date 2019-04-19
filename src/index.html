@@ -11,10 +11,12 @@
   
     <header>
         <div class = "topNav">
+
             <!-- Contenido slide menu -->
             <div id = "mySidenav" class = "sidenav"> 
               <a href="javascript:void(0)" class="closebtn" id = "closeBtn"> &times; </a>
               <button class="dropdown-btn" id="typeBtn"> Tipo </button>
+
               <!-- Submenu de tipo --> 
                   <nav id="typeMenu">
                     <ul class="subMenu">
@@ -38,6 +40,7 @@
                     </ul>
                   </nav>
               <button class="dropdown-btn" id="weakBtn"> Debilidad </button> 
+
               <!-- Submenu de debilidades -->
                 <nav id="weakMenu">
                     <ul class="subMenu">
@@ -59,8 +62,10 @@
                       <li><input type="button" value="Fairy" class="subm" id="weakFairy"></li>
                       <li><input type="button" value="Dark" class="subm" id="weakDark"></li>
                     </ul>
-                  </nav>
+                </nav>
+
               <button class="dropdown-btn" id="orderBtn"> Ordenar </button>
+
               <!-- Submenu para ordenar -->
               <nav id="orderMenu">
                 <ul class="subMenu">
@@ -73,15 +78,19 @@
                 </ul>
               </nav>
             </div>
+            
+           <div>
             <!-- Muestra barra nav -->
-            <span style="font-size:30px;cursor:pointer" class="openbtn" id="openBtn"> &#9776; </span>
+            <div class="box openBtn" id="openBtn"></div>
             <!-- Barra de búsqueda -->
+            
             <input type="text" class="menuItems" placeholder=" # o Número" id="searchBar">
             <input type="button" value="Buscar" class="menuItems" id="searchButton">
-            </div>
+          </div> 
+        </div>
     </header>
-    <!-- FIN BARRA DE NAVEGACIÓN -->
 
+    <!-- FIN BARRA DE NAVEGACIÓN -->
 
   <div id="pokemonCard">
     <div class="pokemonInfo">
