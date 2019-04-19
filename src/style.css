@@ -449,8 +449,8 @@ h2{
   justify-content: center;
   align-items: center;
   margin: 0;
-  padding: .5em 0 .5em 0;
-  background-color: white;
+  /* padding: .5em 0 .5em 0; */
+  /* background-color: white; */
   border-color: #fb0505;
 }
 #spanAnswer{
@@ -459,9 +459,9 @@ h2{
   color: black;
 }
 .bgGame{
-  background: url("https://i.postimg.cc/FF2GDyVd/quieneseste.png");
+  background: url("https://i.postimg.cc/FF2GDyVd/quieneseste.png") center center;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
 }
 .answerDiv{
   margin-top: 1em;
@@ -470,7 +470,7 @@ h2{
   justify-content: center;
 }
 .playAgain{
-  margin: 1em;
+  margin: .5em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -512,6 +512,7 @@ section ul{
   flex-direction: column;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  min-height: 69vh;
 }
 .statsDiv h2{
   margin-bottom: .5em;

@@ -1,8 +1,8 @@
 const toInfoPage = () => {
-    window.location = "info.html";
+    window.location = "display.html";
 };
 const toListPage = () => {
-    window.location = "list.html";
+    window.location = "display.html";
 };
 const toChartsPage = () => {
     window.location = "charts.html";
