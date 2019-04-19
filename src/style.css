@@ -6,11 +6,85 @@
   box-sizing: border-box;
 }
 body{
+<<<<<<< HEAD
+=======
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+>>>>>>> master
   background-image: url("images/pokemon-pattern-background.png");
 }
 footer{
   background-color: #cccccc;
   text-align: right;
+<<<<<<< HEAD
+=======
+  /* position: absolute;
+  bottom: 0;
+  width: 100%; */
+}
+h1{
+  font-weight: bolder;
+  font-size: 32px;
+}
+h2{
+  font-weight: bold;
+  font-size: 22px;
+}
+.material-icons{
+  cursor: pointer;
+}
+/* Navigation Bar */
+.navigationBar{
+  background-color: #fb0505;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.searchBar{
+  padding-right: 1em;
+  padding-bottom: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-self: flex-end;
+}
+.searchInput{
+  width: 200%;
+  height: auto;
+  font-size: 18px;
+  border-radius: 8px;
+  padding-left: .5em;
+}
+.searchBtn{
+  width: 20%;
+  height: 200%;
+  color: white;
+}
+.homeBtnDiv{
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.homeBtn{
+  width: 50%;
+  height: 50%;
+  max-width: 50px;
+  max-height: 50px;
+  margin: 10px 0px 10px 5px;
+}
+.homeBtnTitle{
+  font-size: 20px;
+  color: white;
+  padding-left: 5px;
+  margin-bottom: 10px;
+  align-self: flex-end;
+  cursor: pointer;
+>>>>>>> master
 }
 h1{
   font-weight: bolder;
@@ -195,6 +269,7 @@ h2{
 
 <<<<<<< HEAD
 
+<<<<<<< HEAD
 /* Barra de navegación */
 .topNav {
    overflow: hidden;
@@ -303,6 +378,154 @@ h2{
  
  
 =======
+=======
+/* INDEX */
+.home{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.home_title{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.homeTitleImg{
+  margin-top: 2em;
+  margin-bottom: 2em;
+  width: 90%;
+  height: 90%;
+  max-width: 269px;
+  max-height: 130px;
+}
+.home_medals{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 0 1em 2em 1em;
+}
+.medals{
+  margin: 2em;
+  width: 70%;
+  height: 70%;
+  max-width: 130px;
+  max-height: 160px;
+}
+/* INFO */
+.megaContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 1em 0 1em 0;
+  border-radius: 4%;
+  background-color: rgba(229,229,229, .7);
+}
+#divTypeImg div{
+  cursor: pointer;
+}
+#divWeaknessesImg div{
+  cursor: pointer;
+}
+/* #pokemonCard{
+  margin
+} */
+.subContainer1{
+  margin: 2em 0 1em 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.pokemonPicture{
+  width: 100%;
+  height: 100%;
+  max-width: 250px;
+  max-height: 250px;
+  padding: 1em;
+  /* border: 2px solid #223d7f; */
+  border-style: outset;
+  border-radius: 20%;
+  background-color: rgb(235, 235, 235);
+}
+.subContainer1-1{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* margin: 2em 1em 2em 3em; */
+  padding: 2em 1em 2em 3em;
+}
+.boxComp{
+  margin: 0.5em 0em 0.5em 0em;
+}
+.box2{
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 1px 1px 0px #dddddd;
+}
+#pokeNum{
+  font-size: 40px;
+}
+#pokeName{
+  font-size: 36px;
+}
+#divTypeImg{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.infoTitle{
+  font-size: 20px;
+  font-weight: bold;
+}
+.subContainer2{
+  display: flex;
+  flex-direction: column;
+}
+.box5{
+  margin: 1em 2em 1em 2em;
+  border-bottom: 2px dashed gainsboro;
+}
+.box6{
+  padding: 0 0 1.5em 0;
+  margin: 1em 2em 1em 2em;
+  border-bottom: 2px dashed gainsboro;
+}
+#divWeaknessesImg{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+#box7{
+  margin: 1em 2em 1em 2em;
+}
+.box8{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 1em 2em 1em;
+}
+#idInputCP{
+  width: 10%;
+  min-width: 75px;
+}
+#calculateButton{
+  cursor: pointer;
+}
+#divCPcalc{
+  margin: .5em .5em .5em .5em;
+}
+
+>>>>>>> master
 /* LISTS */
 .listPageContainer{
   display: flex;
@@ -334,6 +557,10 @@ h2{
   align-items: center;
   max-width: 150px;
   max-height: 150px;
+<<<<<<< HEAD
+=======
+  cursor: pointer;
+>>>>>>> master
 }
 .pokemonDivTex{
   display: flex;
@@ -509,6 +736,10 @@ h2{
     flex: 1 1 0;
   }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 /* GAME */
 #pokemonCardGame{
   margin-left: 3%;
@@ -523,8 +754,13 @@ h2{
   justify-content: center;
   align-items: center;
   margin: 0;
+<<<<<<< HEAD
   padding: .5em 0 .5em 0;
   background-color: white;
+=======
+  /* padding: .5em 0 .5em 0; */
+  /* background-color: white; */
+>>>>>>> master
   border-color: #fb0505;
 }
 #spanAnswer{
@@ -533,9 +769,15 @@ h2{
   color: black;
 }
 .bgGame{
+<<<<<<< HEAD
   background: url("https://i.postimg.cc/FF2GDyVd/quieneseste.png");
   background-repeat: no-repeat;
   background-size: 100%;
+=======
+  background: url("https://i.postimg.cc/FF2GDyVd/quieneseste.png") center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+>>>>>>> master
 }
 .answerDiv{
   margin-top: 1em;
@@ -544,7 +786,11 @@ h2{
   justify-content: center;
 }
 .playAgain{
+<<<<<<< HEAD
   margin: 1em;
+=======
+  margin: .5em;
+>>>>>>> master
   display: flex;
   justify-content: center;
   align-items: center;
@@ -586,6 +832,10 @@ section ul{
   flex-direction: column;
   justify-content: space-evenly;
   flex-wrap: wrap;
+<<<<<<< HEAD
+=======
+  min-height: 69vh;
+>>>>>>> master
 }
 .statsDiv h2{
   margin-bottom: .5em;
@@ -610,10 +860,30 @@ section ul{
   align-self: center;
   background-color: white;
   border: 2px solid #223d7f;
+<<<<<<< HEAD
+=======
+  transition: 200ms;
+}
+#pokemonStatsBtn:hover{
+  background-color: #223d7f;
+  color: white;
+>>>>>>> master
 }
 #statsChart{
   padding: .5em;
   margin: 0;
   background-image: radial-gradient(rgba(255,255,255, 1), rgba(255,255,255, 0));
 }
+<<<<<<< HEAD
 >>>>>>> b86512fab02dae1a74565dfb12f1d1951f4e5908
+=======
+.pokemonCardDisp{
+  display: none;
+}
+.listDisp{
+  display: none;
+}
+.submType{
+  display:none;
+}
+>>>>>>> master

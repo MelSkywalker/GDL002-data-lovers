@@ -64,6 +64,11 @@ const displayPokemonList = (listToDisplay) => {
 // -------------- ADD EVENT LISTENERS ----------
 window.onload = selectPokemonList("order","num","asc");
 document.getElementById("homeBtnId").addEventListener("click", goHome);
+<<<<<<< HEAD
+=======
+document.getElementById("infoPageMenu").addEventListener("click", () => displayScreen("info1"));
+document.getElementById("listPageMenu").addEventListener("click", () => displayScreen("list1"));
+>>>>>>> master
 
 document.getElementById("typeNormal").addEventListener("click", () => selectPokemonList("filter","type","Normal"));
 document.getElementById("typeFighting").addEventListener("click", () => selectPokemonList("filter","type","Fighting"));

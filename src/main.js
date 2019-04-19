@@ -1,8 +1,15 @@
 const toInfoPage = () => {
+<<<<<<< HEAD
     window.location = "info.html";
 };
 const toListPage = () => {
     window.location = "list.html";
+=======
+    window.location = "display.html";
+};
+const toListPage = () => {
+    window.location = "display.html";
+>>>>>>> master
 };
 const toChartsPage = () => {
     window.location = "charts.html";

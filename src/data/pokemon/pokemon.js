@@ -4587,7 +4587,7 @@ var POKEMON = {
       "Water"
     ],
     "typeImg":[
-      "images/types/electric.png"
+      "images/types/water.png"
     ],
     "description": "Staryu posee un Ûrgano central, conocido como su n˙cleo, que brilla con una luz roja. A finales de verano, pueden verse en la playa los n˙cleos de estos PokÈmon brillando como las estrellas del cielo.",
     "height": "0.79 m",

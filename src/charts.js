@@ -76,8 +76,16 @@ const displayChart = (inputIndex) => {
             }
         })
     })
+<<<<<<< HEAD
     
 }
 
 document.getElementById("homeBtnId").addEventListener("click", goHome);
+=======
+}
+
+document.getElementById("homeBtnId").addEventListener("click", goHome);
+document.getElementById("infoPageMenu").addEventListener("click", () => window.location.href = "display.html#pokemonCard");
+document.getElementById("listPageMenu").addEventListener("click", () => window.location.href = "display.html#listsPageDiv");
+>>>>>>> master
 document.getElementById("pokemonStatsBtn").addEventListener("click", () => (displayChart()));

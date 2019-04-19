@@ -161,7 +161,11 @@ const displayMaxCP = (pokemonObject) => {
     }
 };
 
+<<<<<<< HEAD
 //------------------------------------------------------------------ CLEAR FUNCTIONS ---------------------------------------------------------------------
+=======
+//------------------ CLEAR FUNCTIONS --------------
+>>>>>>> master
 const clearElement = (element) => {
     document.getElementById(element).innerHTML = "";
 };
@@ -188,6 +192,11 @@ const removeChild = (element) => {
 // ----------------------------------------------------------------- ADD EVENT LISTENERS --------------------------------------------------------------------------
 window.onload = displayRandomPokemon;
 document.getElementById("homeBtnId").addEventListener("click", goHome);
+<<<<<<< HEAD
+=======
+document.getElementById("infoPageMenu").addEventListener("click", () => displayScreen("info1"));
+document.getElementById("listPageMenu").addEventListener("click", () => displayScreen("list1"));
+>>>>>>> master
 
 document.getElementById("searchButton").addEventListener("click", displayPokemon);
 document.getElementById("searchBar").addEventListener("keyup", function (e) {
