@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0">
+    <title>Pokédex Go!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- <div id="test"> -->
+    <header>
+        <div class="navigationBar">
+            <div style="font-size:30px;cursor:pointer" class="homeBtnDiv" id="homeBtnId">
+                <img src="images/home-blue-btn.gif" alt="Home button" class="homeBtn">
+                <label for="homeBtn" class="homeBtnTitle">HOME</label>
+            </div>
+            <!-- <span style="font-size:30px;cursor:pointer" class="openbtn" id="openBtn"></span> -->
+            <div class="searchBar">
+                <!-- <input type="text" placeholder=" # o Número" class="searchInput" id="searchBar"> -->
+                <!-- <input type="button" value="Buscar" class="searchBtn" id="searchButton"> -->
+                <!-- <i class="material-icons md-20 searchBtn" id="searchButton">search</i> -->
+            </div>
+        </div>
+        <div class="containerMenu">
+            <nav class="mainMenu">
+                <ul>
+                    <li><a href="info.html">POKEMON</a></li>
+                    <li><a href="list.html">LISTAS</a></li>
+                    <li><a href="charts.html">ESTADÍSTICAS</a></li>
+                    <li><a href="#">JUEGO</a></li>
+                    <li><a href="about.html">ACERCA DE</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- FIN BARRA DE NAVEGACIÓN -->
+
+    <div id="pokemonCardGame">
+        <div id="divAnswer">
+            <span id="spanAnswer"></span>
+        </div>
+        <div class="bgGame">
+            <div class="pokemonGame" id="divPictureGame">
+                <figure>
+                    <img class="pokemonGameImg" id="pokemonPictureGame">
+                </figure>
+            </div>
+        </div>
+        <div class="answerDiv">
+            <label for="answerSearchBar">Es: </label>
+            <input type="text" class="answerItems" placeholder=" # o Número" id="answerInput" onfocus="this.value=''">
+            <input type="button" value="Go!" class="answerItems" id="answerButton">
+        </div>
+        <div class="playAgain">
+            <input type="button" value="Jugar otra vez!" id="playAgainButton">
+        </div>
+    </div>
+
+    </div>
+
+    <footer> Creado por Mel y Share :)</footer>
+
+    <script src="./data/pokemon/pokemon.js"></script>
+    <script src="data.js"></script>
+    <!-- <script src="main.js"></script> -->
+    <script src="game.js"></script>
+
+
+</body>
+
+</html>

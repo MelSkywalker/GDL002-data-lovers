@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0">
+    <title>Pokédex Go!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- <div id="test"> -->
+    <header>
+        <div class="navigationBar">
+            <div style="font-size:30px;cursor:pointer" class="homeBtnDiv" id="homeBtnId">
+                <img src="images/home-blue-btn.gif" alt="Home button" class="homeBtn">
+                <label for="homeBtn" class="homeBtnTitle">HOME</label>
+            </div>
+            <!-- <span style="font-size:30px;cursor:pointer" class="openbtn" id="openBtn"></span> -->
+            <div class="searchBar">
+                <input type="text" placeholder=" # o Número" class="searchInput" id="searchBar">
+                <!-- <input type="button" value="Buscar" class="searchBtn" id="searchButton"> -->
+                <i class="material-icons md-20 searchBtn" id="searchButton">search</i>
+            </div>
+        </div>
+        <div class="containerMenu">
+            <nav class="mainMenu">
+                <ul>
+                    <li><a href="info.html">POKEMON</a></li>
+                    <li><a href="list.html">LISTAS</a></li>
+                    <li><a href="charts.html">ESTADÍSTICAS</a></li>
+                    <li><a href="game.html">JUEGO</a></li>
+                    <li><a href="#">ACERCA DE</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- FIN BARRA DE NAVEGACIÓN -->
+
+    <section class="aboutSection">
+        <h1>Acerca de Pokedex Go!</h1>
+        <h2>¡Bienvenido entrenador!</h2>
+        <p>Esta aplicación está diseñada para aquellos entrenadores veteranos, fanáticos de la 1a generación de Pokemon.
+        </p>
+        <p>Aquí encontrarás información detallada de cada Pokemon de Kanto, incluyendo sus datos principales del juego
+            Pokemon GO!</p>
+        <p>Nuestro objetivo es que te diviertas mientras recuerdas a los primeros pokemon, así como proporcionarte datos
+            que te serán útiles al jugar Pokemon Go!</p>
+        <p>Te invitamos a disfrutar los diferentes servicios que te ofrecemos:</p>
+        <ul>
+            <li>Información detallada del pokemon seleccionado</li>
+            <li>Listas de Pokemon por tipo, debilidad, orden alfabético o numérico</li>
+            <li>Comparación de estadísticas base entre diferentes Pokemon</li>
+            <li>El juego "¿Quién es ese Pokemon?"</li>
+        </ul>
+    </section>
+    <footer> Creado por Mel y Share :)</footer>
+
+    <script src="./data/pokemon/pokemon.js"></script>
+    <script src="data.js"></script>
+    <script src="about.js"></script>
+    <script src="game.js"></script>
+
+
+</body>
+
+</html>

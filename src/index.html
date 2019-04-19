@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -91,103 +92,57 @@
     </header>
 
     <!-- FIN BARRA DE NAVEGACIÓN -->
+=======
+>>>>>>> b86512fab02dae1a74565dfb12f1d1951f4e5908
 
-  <div id="pokemonCard">
-    <div class="pokemonInfo">
-      <figure>
-        <img class="pokemonImg" id="pokemonPicture">
-      </figure>
-    </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0">
+  <title>Pokédex Go!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
 
-    <div class="pokemonInfo">
-      <span class="pokemonNumber" id="pokeNum"></span>
-      <span class="pokemonName" id="pokeName"></span>
-    </div>
-
-    <div class="pokemonInfo" id="divType">
-      <label for="pokemonTypeSpan">Tipo: </label>
-      <span class="pokemonTypes" id="pokeType" name="pokemonTypeSpan"></span>
-      <div id="divTypeImg"></div>
-    </div>
-
-    <div class="pokemonInfo">
-      <label for="pokemonPreEvolutionSpan">Pre-evoluciones: </label>
-      <span class="pokemonPreEvolutions" id="pokePreEvolution" name="pokemonPreEvolutionSpan"></span>
-    </div>
-
-    <div class="pokemonInfo">
-      <label for="pokemonEvolutionSpan">Evoluciones: </label>
-      <span class="pokemonEvolutions" id="pokeEvolution" name="pokemonEvolutionSpan"></span>
-    </div>
-
-    <div class="pokemonInfo">
-      <label for="pokeDescriptionSpan">Descripción: </label>
-      <span class="pokemonDescription" id="pokeDescription" name="pokemonDescriptionSpan"></span>
-    </div>
-
-    <div class="pokemonInfo">
-      <label for="pokeHeightSpan">Altura: </label>
-      <span class="pokemonHeight" id="pokeHeight" name="pokemonHeight"></span>
-    </div>
-
-    <div class="pokemonInfo">
-      <label for="pokeWeightSpan">Peso: </label>
-      <span class="pokemonWeight" id="pokeWeight" name="pokemonWeightSpan"></span>
-    </div>
-
-    <div class="pokemonInfo" id="divWeaknesses">
-      <label for="pokemonWeaknessesSpan">Debilidades: </label>
-      <span class="pokemonWeaknesses" id="pokeWeaknesses" name="pokemonWeaknessesSpan"></span>
-      <div id="divWeaknessesImg"></div>
-    </div>
-
-    <div class="pokemonInfo">
-      <p>Información de juego: </p>
-      <div class="pokemonInfo pokemonGameInfo">
-        <label for="frequencySpawnSpan">Frecuencia de aparición: </label>
-        <span class="pokemonInfo" id="frequencySpawn" name="frequencySpawnSpan"></span>
+<body>
+  <div id="root"></div>
+  <header>
+    <div class="navigationBar">
+      <div style="font-size:30px;cursor:pointer" class="homeBtnDiv">
+        <img src="images/home-blue-btn.gif" alt="Home button" class= "homeBtn">
+        <label for="homeBtn" class="homeBtnTitle">HOME</label>
       </div>
-
-      <div class="pokemonInfo pokemonGameInfo">
-        <label for="timeSpawnSpan">Tiempo de aparición: </label>
-        <span class="pokemonInfo" id="timeSpawn" name="timeSpawnSpan"></span>
-      </div>
-      <div class="pokemonInfo pokemonGameInfo">
-        <label for="kmEggSpan">Distancia para eclosión de huevo: </label>
-        <span class="pokemonInfo" id="kmEgg" name="kmEggSpan"></span>
-      </div>
-
-      <div class="pokemonInfo pokemonGameInfo">
-        <label for="candiesNumberSpan">Número de dulces para evolucionar: </label>
-        <span class="pokemonInfo" id="candies" name="candiesSpan"></span>
+      <!-- <span style="font-size:30px;cursor:pointer" class="openbtn" id="openBtn"></span> -->
+      <div class="searchBar">
+        <!-- <input type="text" placeholder=" # o Número" class="searchInput" id="searchBar"> -->
+        <!-- <input type="button" value="Buscar" class="searchBtn" id="searchButton"> -->
+        <!-- <i class="material-icons md-20 searchBtn" id="searchButton">search</i> -->
       </div>
     </div>
+  </header>
 
-    <!-- <div id="divCountdownBar">
-      <div id="divTimeLeft">
-      </div>
-    </div> -->
-
+  <div class="home">
+    <div class="home_title">
+      <img src="images/pokedex-go-medium.png" alt="Pokedex Go" class="homeTitleImg">
+    </div>
+    <div class="home_medals">
+      <img src="images/medals/medal-pokemon.png" alt="Pokemon" class="medals" id="pokemonMedal">
+      <img src="images/medals/medal-list.png" alt="Listas" class="medals" id="listMedal">
+      <img src="images/medals/medal-charts.png" alt="Estadísticas" class="medals" id="statsMedal">
+      <img src="images/medals/medal-game.png" alt="Juego" class="medals" id="gameMedal">
+      <img src="images/medals/medal-about.png" alt="Acerca de" class="medals" id="aboutMedal">
+      <img src="images/medals/medal-6.png" alt="Próximamente" class="medals">
+      <img src="images/medals/medal-7.png" alt="Próximamente" class="medals">
+      <img src="images/medals/medal-8.png" alt="Próximamente" class="medals">
+    </div>
   </div>
-    <!-- ---------------------- PIKEMON LIST ------------------------------------- -->
+  
+  <footer class="footer"> Creado por Mel y Share :)</footer>
 
-    <div id="pokemonList"></div>
+  <script src="./data/pokemon/pokemon.js"></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
 
-    <!-- -------Obtener CP Máximo------ -->
-    <div id="divMaxCP">
-      <label for="inputCP">Ingresa los PC de tu Pokémon: </label>
-      <input type="text" id="idInputCP" name="inputCP" onfocus="this.value=''">
-      
-      <input type="button" value="Calcular" id="calculateButton">
-
-      <!-- Resultado -->
-      <label id="divCPcalc"></label>
-    </div>
-
-    <footer> Creado por Mel y Share :)</footer>
-
-    <script src="./data/pokemon/pokemon.js"></script>
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </body>
 </html>

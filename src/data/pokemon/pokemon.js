@@ -2654,7 +2654,7 @@ var POKEMON = {
     "id": 71,
     "num": "071",
     "name": "Victreebel",
-    "img": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/072.png",
+    "img": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/071.png",
     "type": [
       "Grass",
       "Poison"
@@ -4038,7 +4038,7 @@ var POKEMON = {
       "Grass",
       "Ice"
     ],
-    "weaknesses":[
+    "weaknessesImg":[
       "images/types/water.png",
       "images/types/grass.png",
       "images/types/ice.png"
