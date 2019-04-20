@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pokedex Go!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="navBar">
+            <div class="homeBtn">
+                <img src="images/home-blue-btn.gif" alt="Home button">
+            </div>
+            <form class="searchBar">
+                <input type="text" placeholder="# / Nombre">
+                <i class="material-icons md-20 searchBtn" id="searchButton">search</i>
+            </form>
+        </div>
+        <div>
+            <img src="images/red75.png" alt="account">
+            <i class="material-icons" id="logoutButton">exit_to_app</i>
+        </div>
+        <nav class="mainMenu">
+            <ul>
+                <li>POKEMON</li>
+                <li>LISTAS</li>
+                <li>GRÁFICAS</li>
+                <li>JUEGOS</li>
+                <li>ACERCA DE</li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="modal">
+        <form id="signup-form">
+            <div class="input-field">
+                <label for="signup-name">Nombre: </label>
+                <input type="text" id="signup-name">
+                <label for="signup-email">Email:</label>
+                <input type="text" id="signup-email">
+                <label for="signup-password">Contraseña: </label>
+                <input type="password" id="signup-password">
+                <label for="verify-password">Verificar contraseña: </label>
+                <input type="password" id="verify-password">
+            </div>
+            <input type="submit" value="Registrar">
+        </form>
+    </div>
+
+    <div class="modal">
+        <form id="login-form">
+            <div class="input-field">
+                <label for="login-email">Email: </label>
+                <input type="text" id="login-email">
+                <label for="login-password">Contraseña: </label>
+                <input type="password" id="login-password">
+            </div>
+            <input type="submit" value="Iniciar sesión">
+        </form>
+    </div>
+
+    <div class="container" id="profilePage">
+        <div>
+            <div class="profileInfo" id="userImg"></div>
+            <span id="userName"></span>
+        </div>
+        <div class="subcontainerProfile"></div>
+    </div>
+
+    <div class="container" id="infoPage">
+        <div class="pokemonFullCard">
+            <div class="subContainer1">
+                <div class="info box1"></div>
+                <div class="info box2">
+                    <span class="pokemonNumber"></span>
+                    <span class="pokemonName"></span>
+                </div>
+                <div class="info box3">
+                    <label class="infoTitle">Tipo: </label>
+                    <div id="divTypeImg"></div>
+                </div>
+                <div class="info box4">
+                    <div>
+                        <label class="infoTitle">Pre-evoluciones</label>
+                        <span class="pokemonPreEvolutions" id="pokePreEvolution"></span>
+                    </div>
+                    <div>
+                        <label class="infoTitle">Evoluciones</label>
+                        <span class="pokemonEvolutions" id="pokeEvolution"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="subContainer2">
+                <div class="info box5">
+                    <div>
+                        <label class="infoTitle">Altura: </label>
+                        <span id="pokeHeight"></span>
+                    </div>
+                    <div>
+                        <label class="infoTitle">Peso:</label>
+                        <span id="pokeWeight"></span>
+                    </div>
+                    <div>
+                        <label class="infoTitle">Descripción: </label>
+                        <span id="pokeDescription"></span>
+                    </div>
+                </div>
+                <div class="info box6">
+                    <label class="infoTitle">Debilidades: </label>
+                    <div id="divWeaknessesImg"></div>
+                </div>
+                <div class="subContainer3">
+                    <h2>Información de juego: </h2>
+                    <div class="info box7">
+                        <label class="infoTitle">Frecuencia de aparición: </label>
+                        <span id="frequencySpan"></span>
+                    </div>
+                    <div class="info box8">
+                        <label class="infoTitle">Tiempo de aparición: </label>
+                        <span id="timeSpawn"></span>
+                    </div>
+                    <div class="info box9">
+                        <label class="infoTitle">Distancia para eclosión de huevo: </label>
+                        <span id="kmEgg"></span>
+                    </div>
+                    <div class="info box10">
+                        <label class="infoTitle">Número de dulces para evolucionar: </label>
+                        <span id="candies"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="side">
+            <div>
+                <img src="images/heart-icon.png">
+            </div>
+            <div>
+                <img src="images/pokeball-icon.png">
+            </div>
+            <form class="subcontainer" id="calculateForm">
+                <label for="inputCP" class="infoTitle">Ingresa los PC de tu Pokemon: </label>
+                <input type="text" class="searchInput" id="idInputCP" onfocus="this.value=''">
+                <input type="button" value="Calcular" id="calculateButton">
+                <label id="divCPcalc"></label>
+            </form>
+            <div class="subcontainer" id="timerDiv">
+                <i class="material-icons">timer</i>
+                <canvas id="timerBar"></canvas>
+            </div>
+        </section>
+    </div>
+
+    <div class="container" id="listPage">
+        <div class="listContainer">
+            <div id="pokemonList"></div>
+        </div>
+        <section class="side">
+            <nav class="listNav">
+                <ul class="listUl">
+                    <li class="mainElement">Tipos
+                        <ul class="dropdown1">
+                            <li id="typeNormal">Normal</li>
+                            <li id="typeFightingl">Fighting</li>
+                            <li id="typeFlying">Flying</li>
+                            <li id="typePoison">Poison</li>
+                            <li id="typeGround">Ground</li>
+                            <li id="typeRock">Rock</li>
+                            <li id="typeBug">Bug</li>
+                            <li id="typeGhost">Ghost</li>
+                            <li id="typeSteel">Steel</li>
+                            <li id="typeFire">Fire</li>
+                            <li id="typeWater">Water</li>
+                            <li id="typeElectric">Electric</li>
+                            <li id="typePsychic">Psychic</li>
+                            <li id="typeIce">Ice</li>
+                            <li id="typeDragon">Dragon</li>
+                            <li id="typeFairy">Fairy</li>
+                            <li id="typeDark">Dark</li>
+                        </ul>
+                    </li>
+                    <li class="mainElement">Débiles a
+                        <ul class="dropdown1">
+                            <li id="weakNormal">Normal</li>
+                            <li id="weakFightingl">Fighting</li>
+                            <li id="weakFlying">Flying</li>
+                            <li id="weakPoison">Poison</li>
+                            <li id="weakGround">Ground</li>
+                            <li id="weakRock">Rock</li>
+                            <li id="weakBug">Bug</li>
+                            <li id="weakGhost">Ghost</li>
+                            <li id="weakSteel">Steel</li>
+                            <li id="weakFire">Fire</li>
+                            <li id="weakWater">Water</li>
+                            <li id="weakElectric">Electric</li>
+                            <li id="weakPsychic">Psychic</li>
+                            <li id="weakIce">Ice</li>
+                            <li id="weakDragon">Dragon</li>
+                            <li id="weakFairy">Fairy</li>
+                            <li id="weakDark">Dark</li>
+                        </ul>
+                    </li>
+                    <li class="mainElement">Lista completa
+                        <ul class="dropdown1">
+                            <li>Por número
+                                <ul class="dropdown2">
+                                    <li id="order1">1 - 151</li>
+                                    <li id="order151">151 - 1</li>
+                                </ul>
+                            </li>
+                            <li>Por nombre
+                                <ul class="dropdown2">
+                                    <li id="orderAZ">A - Z</li>
+                                    <li id="orderZA">Z - A</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    </div>
+
+    <div class="container" id="chartsPage">
+        <div class="statsDiv">
+            <h2>Estadísticas:</h2>
+            <p>Introduce nombre o número de 2 pokemon para comparar sus stats base: </p>
+            <form id="statsForm">
+                <section class="getStatsDiv">
+                    <label for="pokemon1Stats" class="statsLabel">Pokemon 1: </label>
+                    <input type="text" id="pokemon1Stats">
+                </section>
+                <section class="getStatsDiv">
+                        <label for="pokemon2Stats" class="statsLabel">Pokemon 22 </label>
+                        <input type="text" id="pokemon2Stats">
+                </section>
+                <input type="button" value="Go!">
+            </form>
+        </div>
+        <div id="canvasStatsDiv"></div>
+        <section class="side"></section>
+    </div>
+
+    <div class="container" id="gamePage">
+        
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-firestore.js"></script>
+    <script src="firebase.js"></script>
+    <script src="auth.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+</body>
+
+</html>
