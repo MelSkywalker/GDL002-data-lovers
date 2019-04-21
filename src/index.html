@@ -66,15 +66,22 @@
     </div>
 
     <div class="container" id="profilePage">
-        <div>
-            <div class="profileInfo" id="userImg"></div>
-            <span id="userName"></span>
-        </div>
-        <div class="subcontainerProfile"></div>
+        <section class="main">
+            <div class="profileInfo">
+                <figure id="userImg"></figure>
+                <span id="userName"></span>
+            </div>
+            <div id="userPosts"></div>
+        </section>
+        <section class="side">
+            <div id="friendsList">
+                <h3>Amigos: </h3>
+            </div>
+        </section>
     </div>
 
     <div class="container" id="infoPage">
-        <div class="pokemonFullCard">
+        <section class="pokemonFullCard main">
             <div class="subContainer1">
                 <div class="info box1"></div>
                 <div class="info box2">
@@ -135,7 +142,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
         <section class="side">
             <div>
                 <img src="images/heart-icon.png">
@@ -157,9 +164,9 @@
     </div>
 
     <div class="container" id="listPage">
-        <div class="listContainer">
+        <section class="listContainer main">
             <div id="pokemonList"></div>
-        </div>
+        </section>
         <section class="side">
             <nav class="listNav">
                 <ul class="listUl">
@@ -227,7 +234,7 @@
     </div>
 
     <div class="container" id="chartsPage">
-        <div class="statsDiv">
+        <section class="statsDiv main">
             <h2>Estadísticas:</h2>
             <p>Introduce nombre o número de 2 pokemon para comparar sus stats base: </p>
             <form id="statsForm">
@@ -236,18 +243,52 @@
                     <input type="text" id="pokemon1Stats">
                 </section>
                 <section class="getStatsDiv">
-                        <label for="pokemon2Stats" class="statsLabel">Pokemon 22 </label>
-                        <input type="text" id="pokemon2Stats">
+                    <label for="pokemon2Stats" class="statsLabel">Pokemon 2: </label>
+                    <input type="text" id="pokemon2Stats">
                 </section>
                 <input type="button" value="Go!">
             </form>
-        </div>
-        <div id="canvasStatsDiv"></div>
-        <section class="side"></section>
+            <div id="canvasStatsDiv">
+                <canvas id="statsCanvas"></canvas>
+            </div>
+        </section>
+        <section class="side">
+        </section>
     </div>
 
     <div class="container" id="gamePage">
-        
+        <section class="gameContainer main">
+            <div id="gameAnswer">
+                <span id="spanAnswer"></span>
+            </div>
+            <figure>
+                <img id="gameImg">
+            </figure>
+            <div id="userAnswer">
+                <form id="answerForm">
+                    <label for="gameAnswer">Es: </label>
+                    <input type="text" placeholder="# o nombre" id="gameAnswer" onfocus="this.value=''">
+                    <input type="button" value="Go!" id="answerButton">
+                </form>
+                <input type="button" value="Jugar otra vez!" id="playAgain">
+            </div>
+        </section>
+        <section class="side">
+            <div>
+                <h2>Tus respuestas: </h2>
+                <section id="answerHistory"></section>
+            </div>
+        </section>
+    </div>
+
+    <div class="container" id="aboutPage">
+        <section class="aboutContainer main">
+            <h1>Acerca de Pokedex Go!</h1>
+            <h2>¡Bienvenido entrenador!</h2>
+        </section>
+        <section class="side">
+            <h3>Mapa del sitio</h3>
+        </section>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-app.js"></script>
