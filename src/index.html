@@ -23,16 +23,16 @@
             </form>
         </div>
         <div>
-            <img src="images/red75.png" alt="account">
+            <a href="" data-tab-for="profilePage"><img src="images/red75.png" alt="account"></a>
             <i class="material-icons" id="logoutButton">exit_to_app</i>
         </div>
         <nav class="mainMenu">
             <ul>
-                <li>POKEMON</li>
-                <li>LISTAS</li>
-                <li>GRÁFICAS</li>
-                <li>JUEGOS</li>
-                <li>ACERCA DE</li>
+                <li><a class="navLink" href="" data-tab-for="infoPage">POKEMON</a></li>
+                <li><a class="navLink" href="" data-tab-for="listPage">LISTAS</a></li>
+                <li><a class="navLink" href="" data-tab-for="chartsPage">GRÁFICAS</a></li>
+                <li><a class="navLink" href="" data-tab-for="gamePage">JUEGOS</a></li>
+                <li><a class="navLink" href="" data-tab-for="aboutPage">ACERCA DE</a></li>
             </ul>
         </nav>
     </header>
@@ -67,6 +67,7 @@
 
     <div class="container" id="profilePage">
         <section class="main">
+            <h1>PROFILE PAGE</h1>
             <div class="profileInfo">
                 <figure id="userImg"></figure>
                 <span id="userName"></span>
@@ -82,6 +83,7 @@
 
     <div class="container" id="infoPage">
         <section class="pokemonFullCard main">
+            <h1>INFO PAGE</h1>
             <div class="subContainer1">
                 <div class="info box1"></div>
                 <div class="info box2">
@@ -165,6 +167,7 @@
 
     <div class="container" id="listPage">
         <section class="listContainer main">
+            <h1>LIST PAGE</h1>
             <div id="pokemonList"></div>
         </section>
         <section class="side">
@@ -235,7 +238,7 @@
 
     <div class="container" id="chartsPage">
         <section class="statsDiv main">
-            <h2>Estadísticas:</h2>
+            <h1>CHARTS PAGE</h1>
             <p>Introduce nombre o número de 2 pokemon para comparar sus stats base: </p>
             <form id="statsForm">
                 <section class="getStatsDiv">
@@ -258,6 +261,7 @@
 
     <div class="container" id="gamePage">
         <section class="gameContainer main">
+            <h1>GAME PAGE</h1>
             <div id="gameAnswer">
                 <span id="spanAnswer"></span>
             </div>
@@ -283,7 +287,7 @@
 
     <div class="container" id="aboutPage">
         <section class="aboutContainer main">
-            <h1>Acerca de Pokedex Go!</h1>
+            <h1>ABOUT PAGE</h1>
             <h2>¡Bienvenido entrenador!</h2>
         </section>
         <section class="side">
