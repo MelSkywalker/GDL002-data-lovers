@@ -1,6 +1,17 @@
-
 const goHome = () => {
     window.location = "index.html";
+};
+
+const saveData = (item) => {
+    window.localStorage.setItem('name', item);
+};
+
+const getData = () => {
+    window.localStorage.getItem("name");
+};
+
+const removeData = (item) => {
+    window.localStorage.clear();
 };
 
 //Seleccionar lista a asignar con el botón
@@ -8,11 +19,9 @@ const selectPokemonList = (whichList, property, element) => {
     if (whichList === "filter") {
         displayPokemonList(dataLovers.filterPokemon(window.POKEMON.pokemon, property, element));
         
-        // displayScreen("list");
         return;
     } else if (whichList == "order") {
         displayPokemonList(dataLovers.orderPokemon(window.POKEMON.pokemon, property, element));
-        // displayScreen("list");
         return;
     }
 };
@@ -28,16 +37,14 @@ const displayPokemonList = (listToDisplay) => {
         const pokemonDiv = document.createElement("div");
         const pokemonLabel = document.createElement("label");
         const pokemonDivText = document.createElement("div");
-        // const pokemonFigure = document.createElement("figure");
         const pokemonImg = document.createElement("img");
         const pokemonLink = document.createElement("a");
+
         pokemonDiv.className = "pokemonElement";
-        // pokemonDiv.setAttribute("class","boxWrapper2");
         pokemonImg.setAttribute("class","listPokeImg");
         pokemonLabel.setAttribute("class", "listLabels");
         
         pokemonImg.src = listToDisplay[i].img;
-        // pokemonFigure.appendChild(pokemonImg);
         pokemonDiv.appendChild(pokemonImg);
         pokemonList.appendChild(pokemonDiv);
 
@@ -51,12 +58,22 @@ const displayPokemonList = (listToDisplay) => {
         pokemonDiv.appendChild(pokemonLink);
         pokemonList.appendChild(pokemonDiv);
 
-        pokemonDiv.addEventListener("click",function(){
+        /* pokemonDiv.addEventListener("click",function(){
             window.location = "info.html";
             clearValue("idInputCP");
             clearElement("divCPcalc");
             displayScreen("details");
             displayInfo(listToDisplay[i]);
+        }); */
+
+        pokemonDiv.addEventListener("click",function(){
+            console.log(listToDisplay[i].name);
+            saveData(listToDisplay[i].name);            
+            window.location = "info.html";
+            // clearValue("idInputCP");
+            // clearElement("divCPcalc");
+            // displayScreen("details");
+            // displayInfo(listToDisplay[i]);
         });
     }
 };

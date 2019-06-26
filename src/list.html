@@ -15,7 +15,6 @@
 <body>
   <div id="root"></div>
 
-  <!-- <div id="test"> -->
   <header>
     <div class="navigationBar">
       <div style="font-size:30px;cursor:pointer" class="homeBtnDiv" id="homeBtnId">
@@ -34,8 +33,8 @@
         <ul>
           <!-- <li><a href="info.html">POKEMON</a></li>
           <li><a href="#">LISTAS</a></li> -->
-          <li><a href="#navBar" id="infoPageMenu">POKEMON</a></li>
-          <li><a href="#pokemonList" id="listPageMenu">LISTAS</a></li>
+          <li><a href="info.html" id="infoPageMenu">POKEMON</a></li>
+          <li><a href="list.html" id="listPageMenu">LISTAS</a></li>
           <li><a href="charts.html">ESTADÍSTICAS</a></li>
           <li><a href="game.html">JUEGO</a></li>
           <li><a href="about.html">ACERCA DE</a></li>
@@ -44,7 +43,7 @@
     </div>
   </header>
 
-  <div class="listPageContainer">
+  <div class="listPageContainer" id="listsPageDiv">
     <div class="listContainer">
       <!-- ------------------------ MENU DE LISTAS ------------------------ -->
       <nav class="sideNav " id="submType">
@@ -113,7 +112,6 @@
       </nav>
       <!-- ---------------------- POKEMON LIST ------------------------------------- -->
       <div class="container2">
-        <!-- <div class="showFilter"></div> -->
         <div id="pokemonList" class="list wrapper2"></div>
       </div>
     </div>
@@ -122,7 +120,6 @@
 
   <script src="./data/pokemon/pokemon.js"></script>
   <script src="data.js"></script>
-  <!-- <script src="main.js"></script> -->
   <script src="list.js"></script>
   <script src="info.js"></script>
 
