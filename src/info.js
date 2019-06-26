@@ -6,6 +6,14 @@ const saveData = item => {
   window.localStorage.setItem("name", item);
 };
 
+const saveWeaknessesIndex = item => {
+    window.localStorage.setItem("weaknesses", item);
+}
+
+const saveTypeIndex = item => {
+    window.localStorage.setItem("type", item);
+}
+
 const getData = () => {
   window.localStorage.getItem("name");
 };
@@ -87,8 +95,11 @@ const findTypes = pokemonObject => {
     divTypeImg.appendChild(divEachTypeImg);
 
     divEachTypeImg.addEventListener("click", function() {
-      selectPokemonList("filter", "type", pokemonObject.type[i]);
-    });
+        saveTypeIndex(pokemonObject.type[i]);
+        console.log(localStorage);
+        window.location = "list.html";
+        
+    })
   }
 };
 
@@ -111,7 +122,9 @@ const findWeaknesses = pokemonObject => {
     divWeaknessesImg.appendChild(divEachWeaknessesImg);
 
     divEachWeaknessesImg.addEventListener("click", function() {
-      selectPokemonList("filter", "type", pokemonObject.weaknesses[i]);
+        saveWeaknessesIndex(pokemonObject.weaknesses[i]);
+        console.log(localStorage);
+        window.location = "list.html";      
     });
   }
 };

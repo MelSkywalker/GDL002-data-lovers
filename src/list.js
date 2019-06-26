@@ -14,6 +14,23 @@ const removeData = (item) => {
     window.localStorage.clear();
 };
 
+const lookForLocalStorage = () => {
+    if(localStorage.getItem("type")) {
+        selectPokemonList("filter", "type", localStorage.getItem("type"));
+        removeData();
+        return;
+    }
+    else if(localStorage.getItem("weaknesses")) {
+        selectPokemonList("filter","weaknesses", localStorage.getItem("weaknesses"));
+        removeData();
+        return;
+    }
+    else {
+        selectPokemonList("order","num","asc");
+        return;
+    }
+}
+
 //Seleccionar lista a asignar con el botón
 const selectPokemonList = (whichList, property, element) => {
     if (whichList === "filter") {
@@ -79,7 +96,7 @@ const displayPokemonList = (listToDisplay) => {
 };
 
 // -------------- ADD EVENT LISTENERS ----------
-window.onload = selectPokemonList("order","num","asc");
+window.onload = lookForLocalStorage();
 document.getElementById("homeBtnId").addEventListener("click", goHome);
 document.getElementById("infoPageMenu").addEventListener("click", () => displayScreen("info1"));
 document.getElementById("listPageMenu").addEventListener("click", () => displayScreen("list1"));
