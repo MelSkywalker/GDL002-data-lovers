@@ -113,6 +113,7 @@ h2{
   height: 70%;
   max-width: 130px;
   max-height: 160px;
+  cursor: pointer;
 }
 /* INFO */
 .megaContainer{
@@ -129,13 +130,13 @@ h2{
   border-radius: 4%;
   background-color: rgba(229,229,229, .7);
 }
-/* #divTypeImg div{
+#divTypeImg div{
   cursor: pointer;
-} */
+}
 
-/* #divWeaknessesImg div{
+#divWeaknessesImg div{
   cursor: pointer;
-} */
+}
 
 .subContainer1{
   margin: 2em 0 1em 0;
@@ -458,6 +459,15 @@ section ul{
   padding-left: .5em;
   width: 50%;
 }
+
+#pokemon1Stats{
+  background-color: rgba(43, 136, 245, 0.2);
+}
+
+#pokemon2Stats{
+  background-color: rgba(246, 83, 68, 0.2);
+}
+
 #pokemonStatsBtn{
   margin: 1em 0 1em 0;
   width: 10%;

@@ -76,9 +76,19 @@ const displayChart = (inputIndex) => {
             }
         })
     })
-}
+};
 
 document.getElementById("homeBtnId").addEventListener("click", goHome);
 document.getElementById("infoPageMenu").addEventListener("click", () => window.location.href = "display.html#pokemonCard");
 document.getElementById("listPageMenu").addEventListener("click", () => window.location.href = "display.html#listsPageDiv");
-document.getElementById("pokemonStatsBtn").addEventListener("click", () => (displayChart()));
+document.getElementById("pokemonStatsBtn").addEventListener("click", displayChart);
+document.getElementById("pokemon2Stats").addEventListener("keyup", function(e) {
+    if(e.keyCode === 13) {
+        displayChart();
+    }
+});
+document.getElementById("pokemon1Stats").addEventListener("keyup", function(e) {
+    if(e.keyCode === 13) {
+        displayChart();
+    }
+});
