@@ -14,18 +14,11 @@
 <body>
     <div id="root"></div>
 
-    <!-- <div id="test"> -->
     <header>
         <div class="navigationBar">
             <div style="font-size:30px;cursor:pointer" class="homeBtnDiv" id="homeBtnId">
                 <img src="images/home-blue-btn.gif" alt="Home button" class="homeBtn">
                 <label for="homeBtn" class="homeBtnTitle">HOME</label>
-            </div>
-            <!-- <span style="font-size:30px;cursor:pointer" class="openbtn" id="openBtn"></span> -->
-            <div class="searchBar">
-                <!-- <input type="text" placeholder=" # o Número" class="searchInput" id="searchBar"> -->
-                <!-- <input type="button" value="Buscar" class="searchBtn" id="searchButton"> -->
-                <!-- <i class="material-icons md-20 searchBtn" id="searchButton">search</i> -->
             </div>
         </div>
         <div class="containerMenu">
@@ -33,8 +26,6 @@
                 <ul>
                     <li><a href="info.html" id="infoPageMenu">POKEMON</a></li>
                     <li><a href="list.html" id="listPageMenu">LISTAS</a></li>
-                    <!-- <li><a href="info.html">POKEMON</a></li>
-                    <li><a href="list.html">LISTAS</a></li> -->
                     <li><a href="charts.html">ESTADÍSTICAS</a></li>
                     <li><a href="#">JUEGO</a></li>
                     <li><a href="about.html">ACERCA DE</a></li>
@@ -46,11 +37,12 @@
 
     <div id="pokemonCardGame">
         <div id="divAnswer">
+            <img src="https://a.imge.to/2019/06/27/gNWOf.png" alt="quien es ese pokemon?">
             <span id="spanAnswer"></span>
         </div>
         <div class="bgGame">
             <div class="pokemonGame" id="divPictureGame">
-                <figure>
+                <figure class="gameFigure">
                     <img class="pokemonGameImg" id="pokemonPictureGame">
                 </figure>
             </div>
@@ -67,11 +59,10 @@
 
     </div>
 
-    <footer> Creado por Mel y Share :)</footer>
+    <!-- <footer> Creado por Mel y Share :)</footer> -->
 
     <script src="./data/pokemon/pokemon.js"></script>
     <script src="data.js"></script>
-    <!-- <script src="main.js"></script> -->
     <script src="game.js"></script>
 
 

@@ -78,17 +78,34 @@ const displayChart = (inputIndex) => {
     })
 };
 
+const clearCanvas = () => {
+    const canvas = document.getElementById("statsChart")
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+};
+
 document.getElementById("homeBtnId").addEventListener("click", goHome);
 document.getElementById("infoPageMenu").addEventListener("click", () => window.location.href = "display.html#pokemonCard");
 document.getElementById("listPageMenu").addEventListener("click", () => window.location.href = "display.html#listsPageDiv");
-document.getElementById("pokemonStatsBtn").addEventListener("click", displayChart);
+document.getElementById("pokemonStatsBtn").addEventListener("click", function() {
+    if(document.getElementById("statsChart")) {
+        clearCanvas();
+    };
+    displayChart();
+});
 document.getElementById("pokemon2Stats").addEventListener("keyup", function(e) {
     if(e.keyCode === 13) {
+        if(document.getElementById("statsChart")) {
+            clearCanvas();
+        };
         displayChart();
     }
 });
 document.getElementById("pokemon1Stats").addEventListener("keyup", function(e) {
     if(e.keyCode === 13) {
+        if(document.getElementById("statsChart")) {
+            clearCanvas();
+        };
         displayChart();
     }
 });

@@ -14,18 +14,14 @@
 <body>
   <div id="root"></div>
 
-  <!-- <div id="test"> -->
   <header>
     <div class="navigationBar">
       <div style="font-size:30px;cursor:pointer" class="homeBtnDiv" id="homeBtnId">
         <img src="images/home-blue-btn.gif" alt="Home button" class="homeBtn">
         <label for="homeBtn" class="homeBtnTitle">HOME</label>
       </div>
-      <!-- <span style="font-size:30px;cursor:pointer" class="openbtn" id="openBtn"></span> -->
       <div class="searchBar">
-        <!-- <input type="text" placeholder=" # o Número" class="searchInput" id="searchBar"> -->
-        <!-- <input type="button" value="Buscar" class="searchBtn" id="searchButton"> -->
-        <!-- <i class="material-icons md-20 searchBtn" id="searchButton">search</i> -->
+
       </div>
     </div>
     <div class="containerMenu">
@@ -33,8 +29,6 @@
         <ul>
           <li><a href="info.html" id="infoPageMenu">POKEMON</a></li>
           <li><a href="list.html" id="listPageMenu">LISTAS</a></li>
-          <!-- <li><a href="info.html">POKEMON</a></li>
-          <li><a href="list.html">LISTAS</a></li> -->
           <li><a href="#">ESTADÍSTICAS</a></li>
           <li><a href="game.html">JUEGO</a></li>
           <li><a href="about.html">ACERCA DE</a></li>
@@ -57,11 +51,12 @@
       </div>
     </div>
     <input type="button" id="pokemonStatsBtn" value="Go!">
-    <div id="canvasDiv"></div>
-    <!-- <canvas id="statsChart"></canvas> -->
+    <div id="canvasDiv">
+      <!-- <canvas id="statsChart"></canvas> -->
+    </div>
   </div>
 
-  <footer> Creado por Mel y Share :)</footer>
+  <!-- <footer> Creado por Mel y Share :)</footer> -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
   <script src="./data/pokemon/pokemon.js"></script>
