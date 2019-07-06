@@ -94,7 +94,6 @@ h2{
 }
 .homeTitleImg{
   margin-top: 2em;
-  margin-bottom: 2em;
   width: 90%;
   height: 90%;
   max-width: 269px;
@@ -106,7 +105,7 @@ h2{
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 5% 20% 0 20%;
+  margin: 2% 20% 0 20%;
 }
 .medals{
   margin: 2em;
@@ -379,16 +378,15 @@ h2{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3em;
-  margin-bottom: 2em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
   border-color: #fb0505;
-  
 }
+
 #spanAnswer{
   font-size: 36px;
   font-weight: bolder;
   color: black;
-  
 }
 .bgGame{
   /* background: url("https://i.postimg.cc/FF2GDyVd/quieneseste.png") center center; */
@@ -424,6 +422,30 @@ h2{
   font-size: 18px;
   border-radius: 8px;
   padding-left: .5em;
+}
+
+@media screen and (max-width: 769px){
+  #divAnswer img {
+    width: 500px;
+  }
+  .bgGame{
+    margin: 0;
+  }
+  #answerInput{
+    width: 30%;
+  }
+}
+@media screen and (max-width: 481px) {
+  #divAnswer img {
+    width: 400px;
+  }
+  .bgGame{
+    width: 100%;
+    height: auto;
+  }
+  #answerInput{
+    width: 50%;
+  }
 }
 /* ABOUT */
 .aboutSection{
